@@ -1,0 +1,193 @@
+978-0-7637-3402-2,Programming in Java,2008,12999,images/image.png,0,16
+978-0-201-70279-7,C for Java Programmers,2000,13499,images/image.png,0,201
+978-1-81012-835-8,"Islam in Britain:Past Present and the Future",2001,2490,images/image.png,1,81012
+978-1-872197-10-8,"Hitlers War and the War Path",2005,8819,images/image.png,1,872197
+978-0-201-39126-0,"Computer Confluence:Exploring Tomorrow's Technology",2008,6599,images/image.png,0,201
+978-0-201-39519-3,"C++ for C Programmers",2009,9686,images/image.png,0,201
+978-0-201-39331-X,"College Algebra: Graphs & Models",2010,7865,images/image.png,0,201
+978-0-201-42271-9,"Visual Objects:A Programmer's Guide",2003,11233,images/image.png,0,201
+978-0-04-943050-1,"The Weimar Republic",1988,1345,images/image.png,0,4
+978-0-04-944009-8,"World of the French Revolution (Great revolutions series)",1971,1345,images/image.png,0,4
+978-0-04-944010-4,"World of the French Revolution",1987,1345,images/image.png,0,4
+978-0-04-944012-8,"Henry IV: King of France (French Literature Series)",1984,1345,images/image.png,0,4
+978-0-04-944013-5,"Thiers, 1797-1877: A Political Life",1986,1345,images/image.png,0,4
+978-0-04-944017-3,"Cities and Social Change in Early Modern France",1989,1345,images/image.png,0,4
+978-0-04-945008-0,"Daily Life in Papal Rome in the Eighteenth Century (Daily life series)",1968,1345,images/image.png,0,4
+978-0-04-945010-3,"Daily Life in Venice at the Time of Casanova (Daily life series, 18)",1972,1345,images/image.png,0,4
+978-0-04-945012-7,"Who Defends Rome?: The Forty-five Days, July 25th-Sept.8th, 1943",1973,1345,images/image.png,0,4
+978-0-04-946004-1,"One in Ten Had to Die",1970,1345,images/image.png,0,4
+978-0-04-946006-5,"Malaga: The Biography of a City",1971,1345,images/image.png,0,4
+978-0-04-946007-2,"The origins of science: An inquiry into the foundations of Western thought (Unwin university books)",1987,1345,images/image.png,0,4
+978-0-04-946008-9,"Moorish Culture in Spain",1972,1345,images/image.png,0,4
+978-0-04-946009-6,"Spain Under Franco: A History",1973,1345,images/image.png,0,4
+978-0-04-946011-9,"Early Economic Thought in Spain",1978,1345,images/image.png,0,4
+978-0-04-946012-6,"Spain: Dictatorship to Democracy",1979,1345,images/image.png,0,4
+978-0-04-946013-3,"Contemporary Portugal",1987,1345,images/image.png,0,4
+978-0-04-946014-0,"Spain: Dictatorship to Democracy",1981,1345,images/image.png,0,4
+978-0-04-946015-7,"Spain: Dictatorship to Democracy",1987,1345,images/image.png,0,4
+978-0-04-947004-0,"Spirit of Russia: v. 1",1955,1345,images/image.png,0,4
+978-0-04-947009-5,"History of Postwar Russia (Minerva)",1966,1345,images/image.png,0,4
+978-0-04-947020-0,"Budapest, 1956: History of the Hungarian Revolution",1972,1345,images/image.png,0,4
+978-0-04-947021-7,"Makers of the Russian Revolution: Biographies of Bolshevik Leaders",1974,1345,images/image.png,0,4
+978-0-04-947022-4,"Soviet Union",1978,1345,images/image.png,0,4
+978-0-04-947025-5,"The Russian Civil War",1987,1345,images/image.png,0,4
+978-0-04-948002-5,"From Great Power to Welfare State",1968,1345,images/image.png,0,4
+978-0-04-948003-2,"A short history of Norway",1968,1345,images/image.png,0,4
+978-0-04-950013-6,"Story Unused: A Correspondent in the Far East, 1962-67",1971,1345,images/image.png,0,4
+978-0-04-950014-3,"Reform and Revolution in Asia (St.Antony's Publications)",1973,1345,images/image.png,0,4
+978-0-04-950015-0,"East Asia: Tradition and Transformation",1987,1345,images/image.png,0,4
+978-0-04-950023-5,"The Far Eastern War: States and Societies, 1941-45 (Counterpoint)",1988,1345,images/image.png,0,4
+978-0-04-951009-8,"Problem of China",1966,1345,images/image.png,0,4
+978-0-04-951011-1,"Life and Times of Po Chu-I",1949,1345,images/image.png,0,4
+978-0-04-951012-8,"Opium War Through Chinese Eyes",1958,1345,images/image.png,0,4
+978-0-04-951014-2,"Black flags in Vietnam: The story of a Chinese intervention",1968,1345,images/image.png,0,4
+978-0-04-951015-9,"A short history of the Chinese people",1969,1345,images/image.png,0,4
+978-0-04-951017-3,"People of Wheelbarrow Lane",1971,1345,images/image.png,0,4
+978-0-04-951018-0,"The Wildest Dreams of Kew: A Profile of Nepal",1987,1345,images/image.png,0,4
+978-0-04-951020-3,"Shu Ching: Book of History",1972,1345,images/image.png,0,4
+978-0-04-951021-0,"Crisis and Conflict in Han China 104 BC to AD 9",1974,1345,images/image.png,0,4
+978-0-04-951026-5,"Behind the Forbidden Door: Travels in China (Counterpoint)",1987,1345,images/image.png,0,4
+978-0-04-952003-5,"Death of Old Yokohama",1968,1345,images/image.png,0,4
+978-0-04-952006-6,"Daily Life in Japan at the Time of the Samurai, 1185-1603 (Daily life series)",1972,1345,images/image.png,0,4
+978-0-04-952010-3,"Black Star Over Japan: Rising Forces of Militarism",1973,1345,images/image.png,0,4
+978-0-04-952012-7,"Modern Japan: Aspects of History, Literature and Society (Study on Modern Asia & Africa)",1975,1345,images/image.png,0,4
+978-0-04-953001-0,"Arab of the Desert , Second Edition",1972,1345,images/image.png,0,4
+978-0-04-953005-8,"Trucial States",1971,1345,images/image.png,0,4
+978-0-04-953006-5,"Arabian Peninsula: Society and Politics (Study in Modern Asia & Africa)",1972,1345,images/image.png,0,4
+978-0-04-953007-2,"Kuwait: Prospect and Reality",1987,1345,images/image.png,0,4
+978-0-04-953009-6,"Explorers of Arabia: From the Renaissance to the Victorian Era",1978,1345,images/image.png,0,4
+978-0-04-953010-2,"The Arab of the Desert",1983,1345,images/image.png,0,4
+978-0-04-954014-9,"British India's Relation with the Kingdom of Nepal, 1857-1947",1970,1345,images/image.png,0,4
+978-0-04-954015-6,"Daily Life of French Artists in the Nineteenth Century (Daily life series, 19)",1972,1345,images/image.png,0,4
+978-0-04-954016-3,"The Punjab Tradition: Influence and Authority in Nineteenth Century India",1987,1345,images/image.png,0,4
+978-0-04-954017-0,"Palaces of the Raj: Magnificence and Misery of the Lord Sahibs",1973,1345,images/image.png,0,4
+978-0-04-954018-7,"Gokhale, Gandhi and the Nehrus: Studies in Indian Nationalism",1974,1345,images/image.png,0,4
+978-0-04-954020-0,"Britain's Army in India: From Its Origins to the Conquest of Bengal",1978,1345,images/image.png,0,4
+978-0-04-955003-2,"Persia",1969,1345,images/image.png,0,4
+978-0-04-956007-9,"Armenia: Cradle of Civilization",1971,1345,images/image.png,0,4
+978-0-04-956008-6,"Armenia: Cradle of Civilization",1978,1345,images/image.png,0,4
+978-0-04-956009-3,"Armenia: Cradle of Civilization",1981,1345,images/image.png,0,4
+978-0-04-956010-9,"Armenians, The: A People in Exile",1981,1345,images/image.png,0,4
+978-0-04-956011-6,"Egypt: Politics and Society, 1945-81",1982,1345,images/image.png,0,4
+978-0-04-956012-3,"Egypt: Politics and Society, 1945-81",1983,1345,images/image.png,0,4
+978-0-04-956013-0,"The Great Powers and the End of the Ottoman Empire",1984,1345,images/image.png,0,4
+978-0-04-959004-5,"Vietnam: Anatomy of a War, 1940-75",1986,1345,images/image.png,0,4
+978-0-04-960008-9,"Faith and the Flag: Opening of Africa",1978,1345,images/image.png,0,4
+978-0-04-966007-6,"History of Ghana",1967,1345,images/image.png,0,4
+978-0-04-966010-6,"West African History for the Certificate Year",1971,1345,images/image.png,0,4
+978-0-04-966013-7,"Spanish Sahara",1976,1345,images/image.png,0,4
+978-0-04-967002-0,"Swahili Coast: Politics, Diplomacy and Trade on the East African Littoral, 1798-1856 (Publications / St Antony's College)",1971,1345,images/image.png,0,4
+978-0-04-968005-0,"Short History of South Africa",1973,1345,images/image.png,0,4
+978-0-04-970001-7,"Comanches: The Destruction of a People",1975,1345,images/image.png,0,4
+978-0-04-970002-4,"Trail of Tears",1976,1345,images/image.png,0,4
+978-0-04-970004-8,"Taking Care of Old People at Home",1979,1345,images/image.png,0,4
+978-0-04-972008-4,"Ruins of Time: Four and a Half Centuries of Conquest and Discovery Among the Maya",1975,1345,images/image.png,0,4
+978-0-04-973005-2,"Saratoga: The Decisive Battle",1971,1345,images/image.png,0,4
+978-0-04-973011-3,"Black Odyssey: Ordeal of Slavery in America",1979,1345,images/image.png,0,4
+978-0-04-985001-9,"Letter to a King: Picture-history of the Inca Civilization",1978,1345,images/image.png,0,4
+978-0-04-987002-4,"Gunboat Diplomacy, 1895-1905: Great Power Pressure in Venezuela",1983,1345,images/image.png,0,4
+978-0-04-994005-5,"Frontier: Aborigines, Settlers and Land",1987,1345,images/image.png,0,4
+978-0-04-994010-9,"All the Way: Australia's Road to Vietnam",1987,1345,images/image.png,0,4
+978-0-201-86149-5,"Mathematics Their Way, Spiral-bound Teacher guide plus Blackline Masters",1995,8678,images/image.png,0,201
+978-0-201-86150-1,"Mathematics Their Way: An Activity-Centered Mathematics Program for Early Childhood Education",1995,8678,images/image.png,0,201
+978-0-201-86167-9,"Small-Scale Chemistry",1994,8678,images/image.png,0,201
+978-0-201-86954-5,"BIOLOGY, THE WEB OF LIFE, STUDENT EDITION",2000,8678,images/image.png,0,201
+978-0-201-87012-1,"Precalculus: A Graphing Approach",1997,8678,images/image.png,0,201
+978-0-201-87046-6,"Athena: A Biography",1995,8678,images/image.png,0,201
+978-0-201-87072-5,"Applied Numerical Analysis (6th Edition)",1998,8678,images/image.png,0,201
+978-0-201-87072-5,"",1998,8678,images/image.png,0,201
+978-0-201-87073-2,"Elementary Number Theory and Its Applications (4th Edition)",2000,8678,images/image.png,0,201
+978-0-201-87401-3,"File Structures: An Object-Oriented Approach with C++",1997,8678,images/image.png,0,201
+978-0-201-87443-3,"Introduction to Modern Astrophysics: Solution manual",1999,8678,images/image.png,0,201
+978-0-201-87483-9,"The Macintosh Bible (Bible Series), 7th Edition",1998,8678,images/image.png,0,201
+978-0-201-87484-6,"Community Building on the Web: Secret Strategies for Successful Online Communities",2000,8678,images/image.png,0,201
+978-0-201-87674-1,"Casting the Net: From ARPANET to INTERNET and Beyond",1995,8678,images/image.png,0,201
+978-0-201-87677-2,"More Grammar Plus: A Communicative Course",1995,8678,images/image.png,0,201
+978-0-201-87675-8,"More Grammar Plus: A Communicative Course (Student Book)",1997,8678,images/image.png,0,201
+978-0-201-87679-6,"More About the USA: A Cultural Reader",1996,8678,images/image.png,0,201
+978-0-201-87686-4,"Introduction To Expert Systems (3rd Edition)",1998,8678,images/image.png,0,201
+978-0-201-87694-9,"Modern Econometrics: An Introduction",1997,8678,images/image.png,0,201
+978-0-201-87698-7,"The Art and Craft of Computing",1999,8678,images/image.png,0,201
+978-0-201-87700-7,"Programming in Ada 95 (International Computer Science Series)",1995,8678,images/image.png,0,201
+978-0-201-87712-0,"Software Requirements and Specifications: A Lexicon of Practice, Principles and Prejudices (ACM Press)",1995,8678,images/image.png,0,201
+978-0-201-87726-7,"The Evolving Ethernet (Data Communications and Networks Series)",1996,8678,images/image.png,0,201
+978-0-201-87735-9,"The Web Architect's Handbook",1996,8678,images/image.png,0,201
+978-0-201-87736-6,"Intelligent Database Systems",2001,8678,images/image.png,0,201
+978-0-201-87752-6,"Mathematics for Engineers: A Modern, Interactive Approach",1999,8678,images/image.png,0,201
+978-0-201-87756-4,"Software Testing In The Real World: Improving The Process",1995,8678,images/image.png,0,201
+978-0-201-87758-8,"Unix System Programming (2nd Edition)",1998,8678,images/image.png,0,201
+978-0-201-87761-8,"Modern Engineering Mathematics",1996,8678,images/image.png,0,201
+978-0-201-87758-8,"Unix System Programming (2nd Edition)",1998,8678,images/image.png,0,201
+978-0-201-87761-8,"Modern Engineering Mathematics",1996,8678,images/image.png,0,201
+978-0-201-87789-2,"English for Business Success; Introductory Course (English for Business Success Series)",1995,8678,images/image.png,0,201
+978-0-201-87791-5,"Longman Preparation Series for the Toeic Test: Advanced Course (English for Business Success Series)",1995,8678,images/image.png,0,201
+978-0-201-87798-4,"For Your Information 3: High-Intermediate Reading Skills (Bk. 3)",1995,8678,images/image.png,0,201
+978-0-201-87801-1,"Cocoa Recipes for Mac OS X",2002,8678,images/image.png,0,201
+978-0-201-87806-6,"Basics in Pronunciation: Intermediate Practice for Clear Communication",1997,8678,images/image.png,0,201
+978-0-201-87807-3,"Ready to Write More: From Paragraph to Essay",1996,8678,images/image.png,0,201
+978-0-201-87808-0,"True Colors 1: An EFL Course for Real Communication (Student Book)",1997,8678,images/image.png,0,201
+978-0-201-87879-0,"Introductory Quantum Mechanics (3rd Edition)",1995,8678,images/image.png,0,201
+978-0-201-88067-0,"Electronic Commerce: A Manager's Guide",1996,8678,images/image.png,0,201
+978-0-201-88259-9,"Java Software Solutions for Ap Computer Science",2003,8678,images/image.png,0,201
+978-0-201-88260-5,"C# Web Development for ASP.NET",2003,8678,images/image.png,0,201
+978-0-201-88269-8,"Study Guide to Accompany Modern Labor Economics: Theory and Public Policy (",2002,8678,images/image.png,0,201
+978-0-201-88284-1,"Photoshop 7 for Windows & Macintosh",1995,8678,images/image.png,0,201
+978-0-201-88292-6,"Videotapes [VHS]",1995,8678,images/image.png,0,201
+978-0-201-88295-7,"Haskell: The Craft of Functional Programming (3rd Edition) (International Computer Science Series)",2011,8678,images/image.png,0,201
+978-0-201-88298-8,"Real World Adobe GoLive 6",2002,8678,images/image.png,0,201
+978-0-201-88322-0,"Student Solutions Manual to Accompany Introductory Statistics",1999,8678,images/image.png,0,201
+978-0-201-88336-7,"Discrete Mathematics",1995,8678,images/image.png,0,201
+978-0-201-88409-8,"Photoshop 3 Training on CD ROM",1996,8678,images/image.png,0,201
+978-0-201-88456-2,"Start With a Scan: A Guide to Transforming Scanned Photos and Objects into High Quality Art",1995,8678,images/image.png,0,201
+978-0-201-88495-1,"Essential C++ for Engineers and Scientists",1996,8678,images/image.png,0,201
+978-0-201-88598-9,"Beyond the Mac Is Not a Typewriter",1995,8678,images/image.png,0,201
+978-0-201-88632-0,"The CorelDraw Wow! Book",1999,8678,images/image.png,0,201
+978-0-201-88660-3,"Digital Image Creation: Insights into the New Photography",1996,8678,images/image.png,0,201
+978-0-201-88666-5,"Beyond the Little Mac Book",1997,8678,images/image.png,0,201
+978-0-201-88678-8,"The Web Design WOW! Book",1998,8678,images/image.png,0,201
+978-0-201-88794-5,"Marie Currie",1996,8678,images/image.png,0,201
+978-0-201-88795-2,"Software Construction and Data Structures with Ada 95 (2nd Edition)",1995,8678,images/image.png,0,201
+978-0-201-88954-3,"The C++ Programming Language (3rd Edition)",1997,8678,images/image.png,0,201
+978-0-201-89278-9,"Student Solutions Manual",2002,8678,images/image.png,0,201
+978-0-201-89278-9,"Student Solutions Manual",2002,8678,images/image.png,0,201
+978-0-201-89502-5,"History of Programming Languages, Volume 2",1996,8678,images/image.png,0,201
+978-0-201-89527-8,"Pattern Languages of Program Design 2 (v. 2)",1995,8678,images/image.png,0,201
+978-0-201-89529-2,"101 Bright Ideas: Esl Activities for All Ages",1995,8678,images/image.png,0,201
+978-0-201-89535-3,"The CRC Card Book",1997,8678,images/image.png,0,201
+978-0-201-89542-1,"Analysis Patterns: Reusable Object Models",1996,8678,images/image.png,0,201
+978-0-201-89548-3,"A Practical Guide to Solaris",1999,8678,images/image.png,0,201
+978-0-201-89549-0,"A Practical Guide to Linux",1997,8678,images/image.png,0,201
+978-0-201-89550-6,"Object-Oriented Programming Using C++ (2nd Edition)",1996,8678,images/image.png,0,201
+978-0-201-89551-3,"Object-Oriented Analysis and Design with Applications (3rd Edition)",2007,8678,images/image.png,0,201
+978-0-201-89552-0,"Mechanics of Materials",2000,8678,images/image.png,0,201
+978-0-201-89683-1,"Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition)",1997,8678,images/image.png,0,201
+978-0-201-89684-8,"Art of Computer Programming, Volume 2: Seminumerical Algorithms (3rd Edition)",1997,8678,images/image.png,0,201
+978-0-201-89685-5,"Art of Computer Programming, Volume 3: Sorting and Searching (2nd Edition)",1998,8678,images/image.png,0,201
+978-0-201-89828-6,"Manifesto For A New Medicine: Your Guide To Healing Partnerships And The Wise Use Of Alternative Therapies",1997,8678,images/image.png,0,201
+978-0-201-89854-5,"Insights 1: A Content-based Approach to Academic Preparation (Longman Academic Preparation Series)",1995,8678,images/image.png,0,201
+978-0-201-89854-6,"Insights 2: A Content-based Approach to Academic Preparation (Longman Academic Preparation Series)",1995,8678,images/image.png,0,201
+978-0-201-91186-2,"Race Rules: Navigating The Color Line",1996,8678,images/image.png,0,201
+978-0-201-91465-8,"Hacker's Delight",2002,8678,images/image.png,0,201
+978-0-201-91466-5,"Applying Enterprise JavaBeans 2.1: Component-Based Development for the J2EE Platform (2nd Edition)",2003,8678,images/image.png,0,201
+978-0-201-91467-2,"The JFC Swing Tutorial: A Guide to Constructing GUIs (2nd Edition)",2004,8678,images/image.png,0,201
+978-0-201-91468-9,"NACS Nitty Gritty Bundle",2002,8678,images/image.png,0,201
+978-0-201-91469-6,"Interact CD Component",1994,8678,images/image.png,0,201
+978-0-201-91604-1,"Taking Charge Of Change: Ten Principles For Managing People And Performance",1997,8678,images/image.png,0,201
+978-0-201-92080-2,"The Vulnerable Child: What Really Hurts America's Children And What We Can Do About It",1995,8678,images/image.png,0,201
+978-0-201-92470-1,"SAP R/3 Process Oriented Implementation: Iterative Process Prototyping",1998,8678,images/image.png,0,201
+978-0-201-92476-3,"Software Reuse: Architecture, Process and Organization for Business Success",1997,8678,images/image.png,0,201
+978-0-201-92478-7,"Software for Use: A Practical Guide to the Models and Methods of Usage-Centered Design",1999,8678,images/image.png,0,201
+978-0-201-92480-0,"Internet Cryptography",1997,8678,images/image.png,0,201
+978-0-201-92488-6,"Effective C++: 50 Specific Ways to Improve Your Programs and Design (2nd Edition) (Addison-Wesley Professional Computing)",1995,8678,images/image.png,0,201
+978-0-201-94800-4,"SIGGRAPH 1996 Conference Proceedings: Computer Graphics Annual Conference Series",1996,8678,images/image.png,0,201
+978-0-201-95959-8,"Introductory Algebra (8th Edition)",1998,8678,images/image.png,0,201
+978-0-201-95960-4,"Intermediate Algebra (8th Edition)",1999,8678,images/image.png,0,201
+978-0-201-95987-1,"Huxley: From Devil's Disciple To Evolution's High Priest (Helix Books)",1997,8678,images/image.png,0,201
+978-0-201-95991-8,"From Black Land To Fifth Sun: The Science Of Sacred Sites (Helix books)",1998,8678,images/image.png,0,201
+978-0-201-95993-2,"Grossology Begins at Home",1998,8678,images/image.png,0,201
+978-0-201-95994-9,"Animal Grossology (Grossology Series)",1995,8678,images/image.png,0,201
+978-0-201-96281-9,"Lotus 1-2-3 for Macintosh: An introduction to problem solving with spreadsheets",1993,8678,images/image.png,0,201
+978-0-201-96425-7,"Data Warehouse: From Architecture to Implementation",1996,8678,images/image.png,0,201
+978-0-201-96426-4,"A Guide to SQL Standard (4th Edition)",1995,8678,images/image.png,0,201
+978-0-201-96810-1,"A tutorial guide to Lotus 1-2-3, release 2.2: An introduction to problem solving with spreadsheets",1993,8678,images/image.png,0,201
+978-0-201-97699-1,"Computer Networking: A Top-Down Approach Featuring the Internet",2002,8678,images/image.png,0,201

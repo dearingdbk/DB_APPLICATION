@@ -1,0 +1,110 @@
+1113,Computer Programming 1,"Topics include object-oriented programming, algorithms and problem- solving, declarations and types, fundamental programming constructs and data structures, fundamental techniques in graphics, software tools and environments. Emphasis on designing, coding, debugging, and documenting code, using techniques of good programming style. Lecture and lab. ",COMP
+1123,Computer Programming 2,"Topics include event-driven programming, subclasses and inheritance in object-oriented programming, introduction to algorithm analysis, recursion, file processing, internal searching and sorting methods, simple data structures, software requirements, specifications, and validation. Lecture and lab. Prereq: Comp 1113 with C- or better ",COMP
+1813,Computer Concepts and Applications,"Introduction to computer concepts and hands-on experience with basic applications. Topics include how to create effective web pages, powerful presentations, dynamic spreadsheets, efficient word processing, and simple database applications. No prior computer knowledge assumed. ",COMP
+1893,Multimedia Based intro: Programming,"An introduction to programming by writing computer programs to manipulate images and other media. No prior computer knowledge assumed",COMP
+2103,COMPUTER PROGRAMMING 3,"Topics include fundamental programming concepts, algorithms and problem solving, fundamental data structures, recursion, the imperative programming paradigm, structured design, compiled and scripting languages, program correctness, robustness, and portability, interfacing with operating system. Lecture and lab. Prereq: Comp 1123 with a grade of C- or better",COMP
+2113,DATA STRUCTURES & ALGORITHMS,"Topics include introduction to abstract data specification, implementation and testing, introduction to algorithms and their analysis. Prereq: Comp 2103 and either (Math 1323 or Math 1333) all with C- or better",COMP
+2203,COMPUTER ARCHITECTURE/ORGANIZATION 1,"Topics include digital logic and digital systems, machine level representation of data, assembly level organization and architecture. Lecture and lab. Prereq: 6h of mathematics",COMP
+2663,SOFTWARE ENGINEERING 1,"Topics include software requirements and specifications, methods and tools for object-oriented analysis and design, introduction to software validation, introduction to design patterns and frameworks, programming with components, using APIs, software tools and environments, software processes (introduction), software evolution (introduction), software project management. Prereq: Comp 2103 with C- or better",COMP
+1053,INTRODUCTION TO ENGINEERING 1,"Introduction to Engineering acquaints non-engineering students with basic engineering concepts and shows how these are applied in the workplace. Topics include graphics, surveying, mechanics, electrical/mechanical theory, building acoustics, illumination, project analysis and engineering economy. The course is designed for members of the general student body who wish to expand their knowledge in the applied science field, but may especially appeal to those with an interest in architecture.",APSC
+1413,COMPUTER PROGRAMMING FOR APSC 1,"This course covers the fundamental programming principles of flow control, modularity and structured programming. The student will implement significant programs in the "C" programming language to solve a variety of engineering problems. Prereq or coreq: Math 1013",APSC
+3650,molestie. Sed id risus,"facilisis eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede. Cum",PSYC
+4143,"mauris. Integer sem elit,",ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla,GEOL
+1169,ut mi. Duis risus,"in aliquet lobortis, nisi nibh lacinia orci, consectetuer euismod est arcu ac orci.",ENVS
+1489,lobortis. Class aptent taciti,"Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim.",COMP
+1689,tellus. Aenean egestas hendrerit,Nulla facilisi. Sed neque. Sed eget lacus. Mauris non dui nec urna suscipit,CHEM
+2625,"eget varius ultrices, mauris",Quisque fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh,PHYS
+2887,"Cras dolor dolor, tempus","at, iaculis quis, pede. Praesent eu dui. Cum sociis natoque penatibus et magnis dis parturient",ENVS
+4640,a neque. Nullam ut,"condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula.",CHEM
+3611,dolor. Nulla semper tellus,Donec feugiat metus sit amet ante. Vivamus non lorem vitae odio sagittis semper.,APSC
+3670,Vivamus non lorem vitae,"hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc",COMP
+2172,eu odio tristique pharetra.,"posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum. Suspendisse non leo. Vivamus nibh dolor, nonummy",APSC
+3019,nunc sit amet metus.,"congue a, aliquet vel, vulputate eu, odio. Phasellus at augue id ante dictum cursus. Nunc",APSC
+1516,"Nulla tincidunt, neque vitae","magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est. Nunc laoreet lectus quis massa. Mauris vestibulum,",CHEM
+3252,ac metus vitae velit,fames ac turpis egestas. Fusce aliquet magna a neque. Nullam ut nisi a odio,PHYS
+4389,ullamcorper. Duis at lacus.,"mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec,",MATH
+4934,Suspendisse aliquet molestie tellus.,"iaculis nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero. Proin sed turpis",COMP
+4601,"sodales purus, in molestie","Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor, nunc",COMP
+3205,arcu. Vivamus sit amet,Sed eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim.,APSC
+1034,malesuada fringilla est. Mauris,"amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur",BIOL
+2377,malesuada fringilla est. Mauris,"risus. Quisque libero lacus, varius et, euismod et, commodo at, libero. Morbi accumsan",PSYC
+3858,mauris erat eget ipsum.,pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum. Donec at arcu. Vestibulum ante ipsum,MATH
+4906,"libero est, congue a,","facilisis eget, ipsum. Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede. Cum sociis natoque penatibus et magnis dis parturient",ENVS
+2043,"diam. Sed diam lorem,","libero. Proin mi. Aliquam gravida mauris ut mi. Duis risus odio, auctor vitae, aliquet nec,",NUTR
+1402,molestie orci tincidunt adipiscing.,semper cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio.,ENVS
+4707,libero. Integer in magna.,Nulla interdum. Curabitur dictum. Phasellus in felis. Nulla tempor augue ac,PSYC
+3600,"ornare, elit elit fermentum","congue, elit sed consequat auctor, nunc nulla vulputate dui, nec",APSC
+2298,Donec egestas. Aliquam nec,"lorem, luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class",MATH
+1932,Aenean eget magna. Suspendisse,"volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor",MATH
+3907,vel nisl. Quisque fringilla,"scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis vitae, orci. Phasellus",PSYC
+1211,Integer eu lacus. Quisque,"non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim,",PSYC
+3716,"lobortis quis, pede. Suspendisse","semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa.",MATH
+2303,"augue, eu tempor erat",ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas ornare egestas ligula. Nullam feugiat placerat,PHYS
+3747,"Curabitur consequat, lectus sit","Sed diam lorem, auctor quis, tristique ac, eleifend vitae, erat.",APSC
+1147,In ornare sagittis felis.,"ullamcorper viverra. Maecenas iaculis aliquet diam. Sed diam lorem, auctor quis, tristique ac,",COMP
+4146,volutpat. Nulla facilisis. Suspendisse,"Fusce aliquam, enim nec tempus scelerisque, lorem ipsum sodales purus, in molestie tortor nibh sit amet",COMP
+1167,"pharetra, felis eget varius",mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam,GEOL
+4812,"varius ultrices, mauris ipsum",posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac,APSC
+3006,purus ac tellus. Suspendisse,"Sed nulla ante, iaculis nec, eleifend non, dapibus rutrum, justo. Praesent luctus. Curabitur egestas",APSC
+4133,metus. In lorem. Donec,luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In,APSC
+3102,augue ut lacus. Nulla,dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus.,NUTR
+3352,"Fusce mi lorem, vehicula","vitae, erat. Vivamus nisi. Mauris nulla. Integer urna. Vivamus molestie",CHEM
+2639,Ut nec urna et,"velit justo nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate,",ENVS
+1925,"imperdiet non, vestibulum nec,",a nunc. In at pede. Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi,PHYS
+4697,"sem, vitae aliquam eros",ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula,BIOL
+4121,"felis. Donec tempor, est","arcu imperdiet ullamcorper. Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum",APSC
+2082,vel turpis. Aliquam adipiscing,ac ipsum. Phasellus vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In,APSC
+3839,"sem mollis dui, in","neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus",APSC
+2584,sem magna nec quam.,"Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem,",ENVS
+1694,neque. Sed eget lacus.,"volutpat. Nulla facilisis. Suspendisse commodo tincidunt nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor",NUTR
+1061,Integer id magna et,orci sem eget massa. Suspendisse eleifend. Cras sed leo. Cras vehicula aliquet,CHEM
+4879,"blandit at, nisi. Cum","mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam eros turpis",COMP
+3712,sagittis lobortis mauris. Suspendisse,a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est.,BIOL
+4068,"ut, nulla. Cras eu",orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque,PHYS
+1001,"non, hendrerit id, ante.","nec quam. Curabitur vel lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",MATH
+2302,"placerat eget, venenatis a,",nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim.,PHYS
+1606,ut dolor dapibus gravida.,"sem, vitae aliquam eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu",PSYC
+4334,odio tristique pharetra. Quisque,vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus.,GEOL
+2924,"semper egestas, urna justo","elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras dolor dolor, tempus",NUTR
+3199,"mattis semper, dui lectus",ornare egestas ligula. Nullam feugiat placerat velit. Quisque varius. Nam porttitor,GEOL
+4820,"blandit viverra. Donec tempus,","risus varius orci, in consequat enim diam vel arcu. Curabitur ut odio",NUTR
+4385,non sapien molestie orci,"est. Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut lacus. Nulla tincidunt, neque vitae",GEOL
+2531,"ipsum dolor sit amet,","eu odio tristique pharetra. Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia",BIOL
+4102,eu nulla at sem,"ullamcorper. Duis cursus, diam at pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede,",MATH
+4026,Curae; Phasellus ornare. Fusce,"Donec est mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet,",BIOL
+1330,"elit. Etiam laoreet, libero",Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem egestas,COMP
+4567,eleifend. Cras sed leo.,"Praesent eu dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna.",CHEM
+2199,sit amet nulla. Donec,ornare egestas ligula. Nullam feugiat placerat velit. Quisque varius. Nam,COMP
+2912,"gravida sit amet, dapibus","auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi. Mauris nulla. Integer urna. Vivamus molestie dapibus ligula. Aliquam",BIOL
+1514,"Nunc mauris sapien, cursus","est. Nunc laoreet lectus quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius",PHYS
+1674,"sit amet, consectetuer adipiscing","Cum sociis natoque penatibus et magnis dis parturient montes, nascetur",COMP
+3086,"erat, in consectetuer ipsum","natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique neque",GEOL
+4282,Morbi quis urna. Nunc,"Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing",GEOL
+1502,ridiculus mus. Proin vel,"sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus",PSYC
+3547,"pede, nonummy ut, molestie","Sed auctor odio a purus. Duis elementum, dui quis accumsan",BIOL
+3235,in magna. Phasellus dolor,"parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor.",GEOL
+4889,Mauris ut quam vel,"faucibus leo, in lobortis tellus justo sit amet nulla. Donec non justo. Proin non massa non ante bibendum",GEOL
+4812,penatibus et magnis dis,"amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi.",MATH
+4257,sagittis. Duis gravida. Praesent,"magna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero",NUTR
+4945,tempor arcu. Vestibulum ut,"felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc",NUTR
+2862,"dis parturient montes, nascetur",risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra,COMP
+1941,"commodo at, libero. Morbi",nec urna suscipit nonummy. Fusce fermentum fermentum arcu. Vestibulum ante ipsum primis in faucibus,NUTR
+4499,"sed dictum eleifend, nunc","Quisque ac libero nec ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at, velit.",GEOL
+1382,egestas. Fusce aliquet magna,"parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio",APSC
+3394,"id, ante. Nunc mauris","nec tempus scelerisque, lorem ipsum sodales purus, in molestie tortor nibh",PHYS
+1047,"nostra, per inceptos hymenaeos.","cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget",APSC
+3714,dolor. Quisque tincidunt pede,Pellentesque tincidunt tempus risus. Donec egestas. Duis ac arcu. Nunc mauris. Morbi non,ENVS
+1467,Aliquam vulputate ullamcorper magna.,Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer vitae,PHYS
+2948,"ac, eleifend vitae, erat.","sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet",PHYS
+3467,"nunc nulla vulputate dui,",in faucibus orci luctus et ultrices posuere cubilia Curae; Donec tincidunt. Donec vitae erat,GEOL
+3178,vel arcu. Curabitur ut,"tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a,",APSC
+3458,"cursus et, magna. Praesent",orci luctus et ultrices posuere cubilia Curae; Phasellus ornare. Fusce mollis. Duis sit amet diam eu dolor egestas rhoncus.,MATH
+4613,"Nunc ullamcorper, velit in","felis orci, adipiscing non, luctus sit amet, faucibus ut, nulla. Cras eu tellus eu",PHYS
+1193,"cursus luctus, ipsum leo","Aenean sed pede nec ante blandit viverra. Donec tempus, lorem fringilla",MATH
+3863,Proin non massa non,"cursus, diam at pretium aliquet, metus urna convallis erat, eget tincidunt",PHYS
+2179,ligula. Nullam enim. Sed,"ligula consectetuer rhoncus. Nullam velit dui, semper et, lacinia vitae, sodales at, velit. Pellentesque ultricies dignissim lacus. Aliquam rutrum",GEOL
+1048,"bibendum. Donec felis orci,",In condimentum. Donec at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices,PHYS
+3015,"mauris elit, dictum eu,","pellentesque, tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis.",NUTR
+1707,"lacus. Quisque imperdiet, erat",dictum. Phasellus in felis. Nulla tempor augue ac ipsum. Phasellus,CHEM
+1763,"sapien. Cras dolor dolor,",commodo auctor velit. Aliquam nisl. Nulla eu neque pellentesque massa lobortis ultrices. Vivamus rhoncus. Donec est. Nunc,GEOL
+2979,"ultrices, mauris ipsum porta","vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur",APSC

@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\usepackage{ulem}
+\usepackage{graphicx}
+\begin{document}
+\title{Database Project - Part 3 Database implementation}
+    \author{Amanda Drost, Tellis Bethel, Bruce Dearing\\
+    Acadia University}
+\date{\today}
+\maketitle
+\clearpage
+
+\begin{description}
+
+    \item[Assumptions] \hfill 
+        \begin{itemize}
+            \item A book will be received and picked up from the bookstore.
+            \item A book may have multiple authors, however, only one publisher.
+            \item A student might make multiple separate orders of books.
+            \item Data for the student table and course load are generated separately
+                 and batch entered.
+            \item Publisher data already generated and Publisher ID derived from ISBN.
+            \item Employee data separate from simple login information is stored on 
+                  separate database.
+            \item The year for section is the current fall - winter period. X1 September - December current year X2 January to April Next year.
+            \item Email address length will be less than 254 characters as per RFC 2821.
+            \item ISBN will be ISBN-13, any ISBN-10 numbers will be converted to ISBN-13 before entry.
+            \item ISBN will have dashes included on entry, 978-0-201-70279-7 vice 9780201702797.
+        \end{itemize}
+\end{description}
+
+\end{document}

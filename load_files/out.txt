@@ -1,0 +1,216 @@
+family_name	given_name
+	Glenview
+Adamson	David
+Agate	John
+Aigbokhai	S.O.
+Aker	Sharon Zardetto
+Andrieux	Maurice
+Ashford	Janet
+Axelbank	Albert
+Baratta-Lorton	Mary
+Barnes	John
+Beasley	W.G.
+Bedford	Anthony M.
+Bellin	David
+Bence-Jones	Mark
+Benedict	Philip
+Bergin	Thomas J.
+Bernstein	Jeremy
+Bertino	Elisa
+Bittinger	Marvin L.
+Blanchard	Karen
+Blanchard	Karen Lourie
+Booch	Grady
+Branzei	Sylvia
+Brinton	Donna
+Broback	Steve
+Broukal	Milada
+Buisseret	David
+Burckhardt	Titus
+Burley	David
+Bury	J.P.T.
+Campione	Mary
+Carlson	Jeff
+Carr	Raymond
+Carrington	Luther
+Carroll	Bradley
+Cassano	Mark
+Catania	Barbara
+Ceri	Stefano
+Cheeseman	Bill
+Clemens	Stanley
+Cocking	Cara
+Conallen	Jim
+Constantine	Larry L.
+Cook	Arthur
+Coplien	James O.
+Croft	Tony
+Curie	Susan Quinn Marie
+Darwen	Hugh
+Date	C.J.
+Davies	R.W.
+Davis	Jack
+Davis	Melton
+Davison	Robert
+Dayton	Linnea
+Demana	Franklin
+DeMichiel	Linda
+Desmond	Adrian
+Devlin	Barry
+Dickson	H.R.P.
+Dilke	Christopher
+Dungen	P.H.M.
+Dyson	Michael Eric
+Ehrenberg	Ronald G.
+Engle	Michael W.
+Fagan	Brian
+Fahlenbrach	Rudiger
+Fehrenbach	T.
+Feldman	Michael B.
+Ferrero	Alexis
+Fitton	Mary
+Fleishman	Glenn
+Foley	Gregory
+Folk	Michael
+Ford	Claire Maria
+Fowler	Martin
+Frederic	Louis
+Freeth	Zahra
+Frodesen	Jan
+Frye	R.
+Furneaux	Rupert
+Gallo	Max
+Gerald	Curtis
+Gibson	Richard G.
+Gordon	James
+Gray	Dina
+Grice-Hutchinson	Marjorie
+Griss	M.
+Hall	Lee
+Hanly	Jeri R.
+Hansson	Per
+Haupt	Georges
+Haviland	Keith
+Hawley	Donald Sir
+Holten	Christine
+Hood	Miriam
+Hopwood	Derek
+Houston	Kelli A.
+Hudson	G.Francis
+Huggins	Irvin Nathan
+Huml	Alison
+Hunt	Shane
+Husain	Asad
+Hutten Hirschlaff	Ernest
+Jackson	Michael
+Jackson	Peter
+Jacobson	Ivar
+Jahoda	Gloria
+James	Glyn
+Jensen	Linda
+Jonsson	P.
+Kalakota	Ravi
+Keller	G.
+Kent	Marian
+Kerth	Norman L.
+Kim	Amy Jo
+King	John
+Kingston	Thomas
+Kit	Edward
+Knuth	Donald E.
+Kojima	Hisaka
+Kolb	Eberhard
+Kolko	Gabriel
+Krishnan	Sanjeev
+Kurose	James
+Lane	Linda
+Lawford	James
+Legge	James
+Letheve	Jacques
+Lewis	John
+Liboff	Richard
+Liechti	Kenneth M.
+Lockwood	Lucy A.D.
+Loewe	Michael
+Loftus	William
+Lougheed	Lin
+Lougheed	Linford
+Lourekas	Peter
+Mackey	Daphne
+Maksimchuk	Robert A.
+Mandrioli	Dino
+Marlowe	Thomas
+Marshall	David
+Masaryk	T.G.
+Matena	Vlada
+Maurer	Jay
+Mawdsley	Evan
+McAleavy	Henry
+Mercer	John
+Merritt	Susan
+Meyers	Scott
+Milhomme	Janet
+Mojica	Jose
+Molnar	Miklos
+Murray-Brown	Jeremy
+Nanda	B.R
+Nicholls	C.
+Odam	John
+Ostile	Dale
+Palmer	R.R.
+Pemberton	Gregory
+Pethybridge	Roger
+Pohl	Ira
+Poole	O.M.
+Professional	AW
+Repath-Martos	Lyn
+Reynolds	Henry
+Riccardi	Greg
+Robinson	Richard
+Root	Christine
+Root	Christine Baker
+Rosen	Kenneth
+Ross	Keith
+Russell	Bertrand
+Ryan	Charles T.
+Salama	Ben
+Salus	Peter H.
+Samuelsson	Kurt
+Sbattella	Licia
+Schoenberg	Irene
+Selby	John
+Sewell	William
+Simone	Susan Suchman
+Smith	Douglas K.
+Smith	Richard E.
+Sobell	Mark G.
+Sokmen	Anita
+Stearns	Beth
+Steuer	Sharon
+Stross	Charles
+Stroustrup	Bjarne
+Terzani	Tiziano
+Teufel	T.
+Thomas	Leighton
+Thompson	Simon
+Thorne	Christopher
+Vlissides	John
+Waits	Bert
+Waley	Arthur
+Walrath	Kathy
+Ward	Ernest William
+Warren	Henry S.
+Washburn	Sherwood
+Waterman	Newton
+Weinmann	Elaine
+Weiss	N.A.
+Weissbourd	Richard
+Wesley	Addison
+Wheatley	Patrick
+Whinston	Andrew B.
+Williams	Robin
+Young	Bobbi J.
+Zak	Diane
+Zakhour	Sharon Biocca
+Zarri	Gian Piero
+Zoellick	Bill

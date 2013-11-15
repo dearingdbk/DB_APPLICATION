@@ -1,0 +1,6 @@
+1,"Acadia Bookstore"
+2,"DAL Bookstore"
+3,"MSU Bookstore"
+4,"UCCB Bookstore"
+5,"Another Bookstore"
+6,"YetAnother Bookstore"

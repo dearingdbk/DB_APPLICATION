@@ -1,0 +1,238 @@
+Kolb,Eberhard
+Palmer,R.R.
+Buisseret,David
+Bury,J.P.T.
+Benedict,Philip
+Andrieux,Maurice
+Davis,Melton
+Hansson,Per
+Fitton,Mary
+Hutten Hirschlaff,Ernest
+Burckhardt,Titus
+Gallo,Max
+Grice-Hutchinson,Marjorie
+Carr,Raymond
+Robinson,Richard
+Carr,Raymond
+Masaryk,T.G.
+Pethybridge,Roger
+Molnar,Miklos
+Haupt,Georges
+Davies,R.W.
+Mawdsley,Evan
+Samuelsson,Kurt
+Kingston,Thomas
+Cook,Arthur
+Hudson,G.Francis
+King,John
+Thorne,Christopher
+Russell,Bertrand
+Waley,Arthur
+McAleavy,Henry
+Carrington,Luther
+Sewell,William
+Bernstein,Jeremy
+Legge,James
+Loewe,Michael
+Terzani,Tiziano
+Poole,O.M.
+Frederic,Louis
+Axelbank,Albert
+Beasley,W.G.
+Dickson,H.R.P.
+Hawley,Donald Sir
+Freeth,Zahra
+Dickson,H.R.P.
+Husain,Asad
+Letheve,Jacques
+Dungen,P.H.M.
+Bence-Jones,Mark
+Nanda,B.R
+Lawford,James
+Frye,R.
+Marshall,David
+Hopwood,Derek
+Kent,Marian
+Kolko,Gabriel
+Murray-Brown,Jeremy
+Ward,Ernest William
+Aigbokhai,S.O.
+Mercer,John
+Nicholls,C.
+Selby,John
+Fehrenbach,T.
+Jahoda,Gloria
+Agate,John
+Adamson,David
+Furneaux,Rupert
+Huggins,Irvin Nathan
+Dilke,Christopher
+Hood,Miriam
+Reynolds,Henry
+Pemberton,Gregory
+"Baratta-Lorton","Mary"
+"Waterman","Newton"
+"Wesley","Addison"
+"Demana","Franklin"
+"Waits","Bert"
+"Clemens","Stanley"
+"Foley","Gregory"
+"Hall","Lee"
+"Wheatley","Patrick"
+"Gerald","Curtis"
+"Rosen","Kenneth"
+"Zoellick","Bill"
+"Folk","Michael"
+"Riccardi","Greg"
+"Ostile","Dale"
+"Carroll","Bradley"
+"Aker","Sharon Zardetto"
+"Kim","Amy Jo"
+"Salus","Peter H."
+"Mackey","Daphne"
+"Mackey","Daphne"
+"Sokmen","Anita"
+"Sokmen","Anita"
+"Milhomme","Janet"
+"Broukal","Milada"
+"Jackson","Peter"
+"Thomas","Leighton"
+"Mandrioli","Dino"
+"Ceri","Stefano"
+"Sbattella","Licia"
+"Barnes","John"
+"Jackson","Michael"
+"Ferrero","Alexis"
+"Stross","Charles"
+"Bertino","Elisa"
+"Catania","Barbara"
+"Zarri","Gian Piero"
+"Davison","Robert"
+"Croft","Tony"
+"Kit","Edward"
+"Salama","Ben"
+"Haviland","Keith"
+"Burley","David"
+"Gray","Dina"
+"James","Glyn"
+"Lougheed","Linford"
+"Lougheed","Lin"
+"Lougheed","Lin"
+"Root","Christine"
+"Blanchard","Karen"
+"Cheeseman","Bill"
+"Lane","Linda"
+"Root","Christine Baker"
+"Blanchard","Karen Lourie"
+"Schoenberg","Irene"
+"Maurer","Jay"
+"Liboff","Richard"
+"Whinston","Andrew B."
+"Kalakota","Ravi"
+"Lewis","John"
+"Cocking","Cara"
+"Loftus","William"
+"Mojica","Jose"
+"Ehrenberg","Ronald G."
+"Lourekas","Peter"
+"Weinmann","Elaine"
+"Bittinger","Marvin L."
+"Thompson","Simon"
+"Fleishman","Glenn"
+"Carlson","Jeff"
+"Weiss","N.A."
+"Marlowe","Thomas"
+"Ryan","Charles T."
+"Washburn","Sherwood"
+"Odam","John"
+"Ashford","Janet"
+"Hanly","Jeri R."
+"Williams","Robin"
+"Hunt","Shane"
+"Steuer","Sharon"
+"Dayton","Linnea"
+"Kojima","Hisaka"
+"Broback","Steve"
+"Williams","Robin"
+"Merritt","Susan"
+"Davis","Jack"
+"Curie","Susan Quinn Marie"
+"Feldman","Michael B."
+"Stroustrup","Bjarne"
+"Fahlenbrach","Rudiger"
+"Cassano","Mark"
+"Bergin","Thomas J."
+"Gibson","Richard G."
+"Kerth","Norman L."
+"Coplien","James O."
+"Vlissides","John"
+"Ford","Claire Maria"
+"Simone","Susan Suchman"
+"Bellin","David"
+"Fowler","Martin"
+"Sobell","Mark G."
+"Sobell","Mark G."
+"Pohl","Ira"
+"Booch","Grady"
+"Maksimchuk","Robert A."
+"Engle","Michael W."
+"Young","Bobbi J."
+"Conallen","Jim"
+"Houston","Kelli A."
+"Liechti","Kenneth M."
+"Bedford","Anthony M."
+"Knuth","Donald E."
+"Knuth","Donald E."
+"Gordon","James"
+"Jensen","Linda"
+"Brinton","Donna"
+"Repath-Martos","Lyn"
+"Frodesen","Jan"
+"Holten","Christine"
+"Jensen","Linda"
+"Brinton","Donna"
+"Repath-Martos","Lyn"
+"Holten","Christine"
+"Dyson","Michael Eric"
+"Warren","Henry S."
+"Krishnan","Sanjeev"
+"Matena","Vlada"
+"DeMichiel","Linda"
+"Stearns","Beth"
+"Walrath","Kathy"
+"Campione","Mary"
+"Huml","Alison"
+"Zakhour","Sharon Biocca"
+"Professional","AW"
+"","Glenview"
+"Smith","Douglas K."
+"Weissbourd","Richard"
+"Keller","G."
+"Teufel","T."
+"Griss","M."
+"Jacobson","Ivar"
+"Jonsson","P."
+"Lockwood","Lucy A.D."
+"Constantine","Larry L."
+"Smith","Richard E."
+"Meyers","Scott"
+"Bittinger","Marvin L."
+"Desmond","Adrian"
+"Fagan","Brian"
+"Branzei","Sylvia"
+"Branzei","Sylvia"
+"Zak","Diane"
+"Devlin","Barry"
+"Darwen","Hugh"
+"Date","C.J."
+"Zak","Diane"
+"Kurose","James"
+"Ross","Keith"
+"Rogers","Donald"
+"Moore","Roger"
+"Lazenby","George"
+"Connery","Shaun"
+"Dalton","Timothy"
+"Craig","Daniel"
+"Brosnan","Pierce"
+"MacQueen","Steve"

@@ -1,0 +1,10 @@
+COMP,Computer Science
+APSC,Applied Science
+BIOL,Biology
+CHEM,Chemistry
+ENVS,Environmental Science
+GEOL,Geology
+MATH,Mathematics and Statistics
+NUTR,Nutrition
+PHYS,Physics
+PSYC,Psychology

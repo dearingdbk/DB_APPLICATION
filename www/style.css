@@ -1,0 +1,213 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 62.5%;
+	background: url(images/stripe.png) repeat;
+}
+
+p, li {
+	font: 1.2em/1.8em Tahoma, sans-serif;
+	margin-bottom: 10px;
+}
+
+h1 {
+	font: 2.0em Tahoma, sans-serif;
+	color: white;
+	height: 0px;
+}
+
+h2 {
+	font: 1.8em Tahoma, sans-serif;
+	color: green;
+	margin-bottom: 10px;
+}
+
+#store {
+font-size:10em;
+color: white;
+text-shadow: 6px 6px #065207;
+
+}
+ul {
+	margin-left: 25px;
+}
+
+img {
+	border: none;
+}
+
+#page-wrap {
+	background: white;
+	min-width: 780px;
+	max-width: 1260px;
+	margin: 10px auto;
+	}
+	#page-wrap #inside {
+		margin: 10px 10px 0px 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+#main-content {
+	background: url(images/left-sidebar.gif) repeat-y white;
+	padding-left: 230px;
+	padding-top: 20px;
+}
+	
+#header {
+	background: #267f23;
+	text-align: center;
+}
+	
+#left-sidebar {
+	width: 150px;
+	float: left;
+	padding-left: 15px;
+	padding-top: 20px;
+}
+
+#scroll {
+height:800px;
+overflow:auto;
+
+}
+
+.item_box {
+width:90%;
+border-bottom-style:solid;
+
+}
+
+.item_box img {
+width:200px;
+height:200px;
+position:relative;
+margin-top:20px;
+box-shadow: 10px 10px 5px #888888;
+border:2px solid;
+border-radius:25px;
+}
+
+
+.item_box h2.title {
+position:relative;
+width:60%;
+top:-200px;
+left:220px;
+border-bottom:solid;
+}
+
+.item_box p.isbn {
+
+}
+
+.item_box p.price {
+position:relative;
+float:right;
+top:-20px;
+}
+ /*   <div id="" style="overflow:scroll; height:400px;">*/
+
+.backl {
+    -moz-user-select: text;
+    background: none;
+    border: none;
+    color: grey;
+    cursor: pointer;
+    font-size: 2.0em;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+
+
+}
+
+.backauthor {
+    -moz-user-select: text;
+    background: none;
+    border: none;
+    color: grey;
+    cursor: pointer;
+    font-size:1.5em;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+
+
+}
+
+.input 
+{
+border: none;
+}
+.link {
+    -moz-user-select: text;
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: underline;
+}
+
+
+#student {
+padding:10px;
+border-bottom:2px solid gray;
+margin-bottom:10px;
+
+}
+
+#student input[type="submit"] 
+{
+    width:100%;
+}
+
+#student input[type="text"]
+{
+    font-family: Arial, san-serif;
+    font-size:2.0em;
+    width:100%;
+}
+
+#department {
+    padding:10px;
+    border-bottom:2px solid gray;
+    margin-bottom:10px;
+
+}   
+
+#author {
+    padding-bottom:10px;
+    border-bottom:2px solid gray;
+    margin:10px;
+
+}   
+
+
+/*
+input[type="text"] {
+font-family: Arial, san-serif;
+font-size:1.5em;
+width:100%;
+}
+ */
+    .link:hover span {
+        text-decoration: underline;
+    }
+
+    #footer {
+        background: #267f23;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: white;
+    }
