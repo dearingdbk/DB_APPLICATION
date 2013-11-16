@@ -287,19 +287,6 @@ CREATE VIEW order_view
 /*
  * Create a view to simplify access to required books.
  */
-
-CREATE VIEW student_req_books
-    AS SELECT  
-        a.id_number, 
-        b.term_number, b.section_code, b.course_number, b.dept_code,
-        c.* 
-        FROM Enrolled a INNER JOIN Requires b 
-          ON a.term_number = b.term_number 
-            AND a.section_code = b.section_code 
-            AND a.course_number = b.course_number 
-            AND a.dept_code = b.dept_code 
-        INNER JOIN Book c 
-          ON b.isbn = c.isbn;
           
 CREATE VIEW all_book_data 
 	AS SELECT a.*, 
@@ -314,24 +301,10 @@ CREATE VIEW all_book_data
 					AND b.course_number = c.course_number 
 	ORDER By isbn;
           
-CREATE VIEW student_req_written
-	AS SELECT a.*, b.family_name, b.given_name FROM student_req_books a
-	LEFT JOIN Written b ON a.isbn = b.isbn;
           
 CREATE VIEW student_id
 	AS SELECT id_number FROM Student;   
        
-CREATE VIEW written_book_data
-	AS SELECT a.*, b.family_name, b.given_name FROM Book a LEFT JOIN Written b ON a.isbn = b.isbn;
-		
-CREATE VIEW written_req_book
-    AS SELECT a.*, b.term_number, b.section_code, b.course_number, b.dept_code 
-    FROM written_book_data a
-    INNER JOIN Requires b ON a.isbn = b.isbn;
-
-CREATE VIEW required_book_data
-	AS SELECT a.*, 
-	b.term_number, b.section_code, b.course_number, b.dept_code FROM Book a INNER JOIN Requires b ON a.isbn = b.isbn;
 
 /*
  * Add permissions to the user guest if it does not exist
@@ -400,26 +373,10 @@ GRANT SELECT
 GRANT SELECT
     ON bookstore.order_view
     TO 'guest'@'localhost';
-  
-GRANT SELECT
-	ON bookstore.student_req_books
-	TO 'guest'@'localhost';
-	
-GRANT SELECT
-	ON bookstore.written_book_data
-	TO 'guest'@'localhost';
-
-GRANT SELECT
-	ON bookstore.student_req_written
-	TO 'guest'@'localhost';
 	
 GRANT SELECT
 	ON bookstore.all_book_data
 	TO 'guest'@'localhost';
-
-GRANT SELECT
-    ON bookstore.written_req_book
-    TO 'guest'@'localhost';
 
 GRANT SELECT
 	ON bookstore.student_id
