@@ -28,68 +28,7 @@ class Order
 
     public function get_items()
     {
-        $check = 0;
-        if(empty($this->items))
-        {
-            echo "<h2> No items in your cart </h2>";
-        }
-        else
-        {
-            Print "<table id=\"cart_order\">\n";
-            Print "<tr>\n";
-            Print "<th>ISBN</th>\n";
-            Print "<th>Title</th>\n";
-            Print "<th>Price</th>\n";
-            Print "<th>Qty</th>\n";
-            Print "<th> </th>\n";
-            Print "</tr>\n";
-            
-            foreach($this->items as $isbn => $dingo)
-            {
-                $alt = $check == 1 ? " class=\"alt\" " : "";
-                Print "<tr" . $alt . ">\n";
-                Print "<td>" . $isbn . "</td>\n";
-                Print "<td>" . $dingo['title'] . "</td>\n";
-                Print "<td>$" . $dingo['price'] / 100 . "</td>\n";
-                Print "<td>" . $dingo['qty'] . "</td>\n";
-                Print "<td>";
-                Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" >";
-                Print "<fieldset class=\"input\">";
-                Print "<input type=\"hidden\" name=\"cart_action\" value=\"2\" />";
-                Print "<input type=\"hidden\" name=\"isbn\" value=\"". $isbn  ."\" />";
-                Print "<input type=\"image\" src=\"images/close.png\" alt=\"remove\">";
-                Print "</fieldset>";
-                Print "</form>";
-                Print "</tr>\n";
-                $check = 1 - $check;
-            }
-            Print "</table>\n";
-        }
-
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" >";
-        Print "<fieldset class=\"input\">";
-        Print "<input type=\"hidden\" name=\"cart_view\" value=\"3\" />";
-        Print "<input type=\"image\" src=\"images/goback.png\" value=\"continue shopping\">";
-        Print "</fieldset>";
-        Print "</form>";
-        if (!empty($this->items))
-        {
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"hidden\" name=\"cart_view\" value=\"2\" />";
-            Print "<input type=\"image\" src=\"images/trash.png\" alt=\"empty cart\">";
-            Print "</fieldset>";    
-            Print "</form>";        
-
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" id=\"entry_box\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"text\" name=\"id_number\" placeholder=\"Enter ID Number\" /><br/>";
-            Print "<input type=\"password\" name=\"pwd\" placeholder=\"Enter Password\" /><br/>";
-            Print "<input type=\"hidden\" name=\"cart_view\" value=\"4\" />";
-            Print "<input type=\"submit\" name=\"submit\" value=\"checkout\">";
-            Print "</fieldset>";
-            Print "</form>";
-        }
+        include 'include/get_items.php';
     }
 
     public function print_cart_qty()
@@ -128,55 +67,10 @@ class Order
     } 
 
 
-    public function print_checkout()
-    {
-        if (isset($_SESSION['id_number']))
-            Print $_SESSION['id_number'];
-        else
-        {
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" id=\"entry_box\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"text\" name=\"id_number\" placeholder=\"Enter ID Number\" />";
-            Print "<input type=\"password\" name=\"pwd\" placeholder=\"Enter Password\" />";
-            Print "<input type=\"hidden\" name=\"cart_view\" value=\"4\" />";
-            Print "<input type=\"submit\" name=\"submit\" value=\"checkout\">";
-            Print "</fieldset>";
-            Print "</form>";
-
-        }
-    }
-
 
     private function validateID($id_number)
     {
-        $id_number = trim($id_number);
-        $id_number = stripslashes($id_number);
-        $id_number = htmlspecialchars($id_number);
-        if (preg_match("/1[0-9]{8}/i", $id_number))
-        {
-            $query = sprintf("SELECT COUNT(id_number) FROM student_id WHERE id_number = %s ", $id_number);
-            $query = mysqli_real_escape_string($this->con, $query);
-            if ($result = mysqli_query($this->con, $query))
-            {
-                $row = mysqli_fetch_array($result);
-                if (intval($row[0]))
-                {
-                    $_SESSION['id_number'] = $id_number;
-                    $rtn_val = true;
-                }
-                else
-                    $rtn_val = false;
-            }
-            else
-            {
-                echo "The selected validate failed on execution.";
-                printf("<br/>Errormessage: %s\n", $this->con->error);
-            }
-        }
-        else
-            return false;
-
-        return $rtn_val;
+        include 'include/validateID.php';
     }
 
     public function print_IDForm()
