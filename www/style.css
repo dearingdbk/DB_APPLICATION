@@ -52,7 +52,7 @@ img {
 	}
 	
 #main-content {
-	background: url(images/left-sidebar.gif) repeat-y white;
+	background: url(images/l-sidebar.gif) repeat-y white;
 	padding-left: 230px;
 	padding-top: 20px;
 }
@@ -60,6 +60,7 @@ img {
 #header {
 	background: #267f23;
 	text-align: center;
+    margin-bottom:-10px;
 }
 	
 #left-sidebar {
@@ -67,6 +68,7 @@ img {
 	float: left;
 	padding-left: 15px;
 	padding-top: 20px;
+    margin-right:0px;
 }
 
 #scroll {
@@ -75,29 +77,84 @@ overflow:auto;
 
 }
 
+#cart_order
+{
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:100%;
+    border-collapse:collapse;
+}
+#cart_order td, #cart_order th 
+{
+    font-size:1.2em;
+    border:1px solid #98bf21;
+    padding:3px 7px 2px 7px;
+}
+#cart_order th 
+{
+    font-size:2.0em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#A7C942;
+    color:#fff;
+}
+#cart_order tr.alt td 
+{
+    color:#000;
+    background-color:#EAF2D3;
+}
+
+#cart_menu
+{
+width:100%;
+}
+
+#cart_menu th 
+{   
+    font-size:2.0em;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#A7C942;
+    color:#fff;
+} 
+
+#items
+{
+    color:white;
+    position:relative;
+    top:-30px;
+    right:-35px;
+}
+
+#entry_box
+{
+    float:right;
+    margin-top:-110px;
+}
 .item_box {
-width:90%;
-border-bottom-style:solid;
+    width:90%;
+    border-bottom-style:solid;
 
 }
 
+
 .item_box img {
-width:200px;
-height:200px;
-position:relative;
-margin-top:20px;
-box-shadow: 10px 10px 5px #888888;
-border:2px solid;
-border-radius:25px;
+    width:200px;
+    height:200px;
+    position:relative;
+    margin-top:20px;
+    box-shadow: 10px 10px 5px #888888;
+    border:2px solid;
+    border-radius:25px;
 }
 
 
 .item_box h2.title {
-position:relative;
-width:60%;
-top:-200px;
-left:220px;
-border-bottom:solid;
+    position:relative;
+    width:60%;
+    top:-200px;
+    left:220px;
+    border-bottom:solid;
 }
 
 .item_box p.isbn {
@@ -105,11 +162,25 @@ border-bottom:solid;
 }
 
 .item_box p.price {
-position:relative;
-float:right;
-top:-20px;
+    position:relative;
+    float:right;
+    top:-20px;
 }
- /*   <div id="" style="overflow:scroll; height:400px;">*/
+
+#top_bar
+{
+    margin-top:-20px;
+    margin-left:-16px;
+    background: none;
+}
+
+.cart {
+    position:relative;
+    float:right;
+    clear:both;
+    top:-60px;
+    right:30px;
+}
 
 .backl {
     -moz-user-select: text;
@@ -143,7 +214,7 @@ top:-20px;
 
 .input 
 {
-border: none;
+    border: none;
 }
 .link {
     -moz-user-select: text;
@@ -160,9 +231,9 @@ border: none;
 
 
 #student {
-padding:10px;
-border-bottom:2px solid gray;
-margin-bottom:10px;
+    padding:10px;
+    border-bottom:2px solid gray;
+    margin-bottom:10px;
 
 }
 
