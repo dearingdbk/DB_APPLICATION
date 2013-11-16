@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS Department
 CREATE TABLE IF NOT EXISTS Student
 ( 
     id_number INTEGER NOT NULL PRIMARY KEY,
+    password_hash VARCHAR(255) NOT NULL,
     dob DATE NOT NULL,
     family_name VARCHAR(50) NOT NULL,
     given_name VARCHAR(50) NOT NULL,
@@ -317,6 +318,9 @@ CREATE VIEW student_req_written
 	AS SELECT a.*, b.family_name, b.given_name FROM student_req_books a
 	LEFT JOIN Written b ON a.isbn = b.isbn;
           
+CREATE VIEW student_id
+	AS SELECT id_number FROM Student;   
+       
 CREATE VIEW written_book_data
 	AS SELECT a.*, b.family_name, b.given_name FROM Book a LEFT JOIN Written b ON a.isbn = b.isbn;
 		
@@ -417,7 +421,10 @@ GRANT SELECT
     ON bookstore.written_req_book
     TO 'guest'@'localhost';
 
-
+GRANT SELECT
+	ON bookstore.student_id
+	TO 'guest'@'localhost';
+	
 /* 
  * ADD EMPLOYEE ACCOUNT 
  * Grant permissions to Employee accounts.
@@ -471,7 +478,11 @@ INTO TABLE Student
 COLUMNS TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 ESCAPED BY '"'
-LINES TERMINATED BY '\n';
+LINES TERMINATED BY '\n'
+	(id_number, @var1, dob, family_name, given_name, email, 
+	phone_number, city, province, postal_code, street_number, 
+	street_name, appt_number)
+  SET password_hash = PASSWORD(@var1);
 
 /*
  * Load sections into Section Table.
