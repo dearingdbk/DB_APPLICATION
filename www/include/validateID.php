@@ -11,11 +11,10 @@ if (preg_match("/1[0-9]{8}/i", $id_number))
         $row = mysqli_fetch_array($result);
         if (intval($row[0]))
         {
-            $_SESSION['id_number'] = $id_number;
-            $rtn_val = true;
+            $rtnval = true;
         }
         else
-            $rtn_val = false;
+            $rtnval = false;
     }
     else
     {
@@ -24,7 +23,6 @@ if (preg_match("/1[0-9]{8}/i", $id_number))
     }
 }
 else
-    return false;
+    $rtnval =  false;
 
-return $rtn_val;
 ?>

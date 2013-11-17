@@ -273,7 +273,7 @@ CREATE TABLE IF NOT EXISTS Phone
  */
 CREATE VIEW order_view 
     AS SELECT  
-        a.id_number, 
+        a.*,
         b.isbn, c.title, 
         c.price 
             FROM 
@@ -303,7 +303,8 @@ CREATE VIEW all_book_data
           
           
 CREATE VIEW student_id
-	AS SELECT id_number FROM Student;   
+	AS SELECT id_number, password_hash, family_name, 
+	given_name, email FROM Student;   
        
 
 /*

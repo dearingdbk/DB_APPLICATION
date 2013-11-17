@@ -14,7 +14,14 @@ class Order
     private $con;
     function __construct() 
     {
+        $this->connectToDB("guest", "guestaccount");
     }
+
+    function __destruct() 
+    {
+        mysqli_close($this->con);
+    }
+
 
     public function student_id($id_number)
     {
@@ -26,9 +33,15 @@ class Order
 
     }
 
+
     public function get_items()
     {
         include 'include/get_items.php';
+    }
+
+    public function empty_cart()
+    {
+        $this->items = array();
     }
 
     public function print_cart_qty()
@@ -51,6 +64,7 @@ class Order
 
         if (array_key_exists($isbn, $this->items)) 
         {
+
             $this->items[$isbn]["qty"] += $qty;
         } 
         else
@@ -61,86 +75,162 @@ class Order
 
     public function delete_item($isbn)
     {
-
         if(array_key_exists($isbn, $this->items))
             unset($this->items[$isbn]);
     } 
 
-
+    public function login_id($login_id, $login_pwd)
+    {
+        if ($this->validateID($login_id) 
+            && $this->validatePWD($login_id, $login_pwd))
+        {
+            $_SESSION['login_id'] = $login_id;
+        }
+    }
 
     private function validateID($id_number)
     {
         include 'include/validateID.php';
+        return $rtnval;
+    }
+
+    private function validatePWD($login_id, $login_pwd)
+    {
+        $login_pwd = trim($login_pwd);
+        $login_pwd = stripslashes($login_pwd);
+        $login_pwd = htmlspecialchars($login_pwd);
+        $login_id = trim($login_id);
+        $login_id = stripslashes($login_id);
+        $login_id = htmlspecialchars($login_id);
+        $query = "SELECT COUNT(id_number) FROM student_id ";
+        $query .= sprintf(" WHERE id_number = \"%s\" AND password_hash = PASSWORD('%s') ", $login_id, $login_pwd);
+
+        if ($result = mysqli_query($this->con, $query))
+        {
+            $row = mysqli_fetch_array($result);
+            if (intval($row[0]))
+            {
+                $rtn_val = true;
+            }
+            else
+            {
+                $rtn_val = false;
+            }
+        }
+        else
+        {
+            $rtn_val = false;
+        }
+        return $rtn_val;
+    }
+
+    public function confirm_order()
+    {
+        $insert = "INSERT INTO Bookorder (order_date, id_number) ";
+        $insert .= sprintf(" VALUES(\"%s\", \"%s\") ", date("Y-m-d"), $_SESSION['login_id']);
+        if ($result = mysqli_query($this->con, $insert))
+        {
+            mysqli_free_result($result);
+            $rtn_val = true; 
+            $order_id = mysqli_insert_id($this->con);
+
+            mysqli_commit($this->con); // Need to commit to ensure constraints are met.
+            foreach($this->items as $isbn => $dingo)
+            {  
+                $query = "SELECT quantity FROM Stocks WHERE ";
+                $query .= sprintf(" isbn = \"%s\" AND store_id = \"%s\" ", $isbn, $_SESSION['store']);
+
+                if ($result = mysqli_query($this->con, $query))
+                {
+
+                    $row = mysqli_fetch_assoc($result);
+                    if ($row['quantity'] >= $dingo['qty'])
+                    {
+                        if ($this->update_qty($isbn, $dingo['qty']))
+                        {
+                            $insert = "INSERT INTO Contains VALUES ";
+                            $insert .= sprintf(" ( \"%s\", \"%s\", 0, \"%s\") ", $isbn, $order_id, $dingo['qty']); 
+                            if(!mysqli_query($this->con, $insert))
+                            {
+                                $rtn_val = false;
+                                printf("<br/>Errormessage: %s %s\n",$order_id, $this->con->error);
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            $rtn_val = false;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        $rtn_val = false;
+                        echo "NOT ENOUGH IN STOCK";
+                        break;
+                    }
+
+                    mysqli_free_result($result);
+                }
+                else
+                {
+                    $rtn_val = false;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            $rtn_val = false;
+            printf("<br/>Errormessage: %s\n", $this->con->error);
+        }
+        if ($rtn_val)
+        {
+            mysqli_commit($this->con);
+            $_SESSION['confirmation'] = $order_id;
+            $this->empty_cart();
+
+        }
+        else
+        {
+            printf("<br/>Errormessage: %s %s\n", $order_id, $this->con->error);
+            echo "<h2> SUPER". $rtn_val . "</h2>";
+            mysqli_rollback($this->con);
+        }
+    }
+
+    private function update_qty($isbn, $qty)
+    {
+        $update = "UPDATE Stocks SET quantity = ";
+        $update .= sprintf("quantity - \"%s\" WHERE isbn = \"%s\" ", $qty, $isbn);
+        $this->connectToDB("storeadmin", "adminaccount");
+        if(mysqli_query($this->con, $update))
+        {
+            $rtn_val = true;
+        }
+        else
+        {
+            printf("<br/>Errormessage: %s\n", $this->con->error);
+            $rtn_val = false;
+        }
+
+        $this->connectToDB("guest", "guestaccount");
+        return $rtn_val;
     }
 
     public function print_IDForm()
     {
-        if (isset($_SESSION['id_number']))
-        {
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"hidden\" name=\"drop_id\" value=\"3\"/>";
-            Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $_SESSION['id_number'] . " [x]\"/>";
-            Print "</fieldset>";
-            Print "</form>";
-        }
-        else
-        {
-            Print "<h2>Student ID</h2>\n";
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"text\" name=\"id_number\" />";
-            Print "<input type=\"submit\"  name=\"submit\" value=\"submit\"/>";
-            Print "</fieldset>";
-            Print "</form>";
-        }
+        include 'include/print_IDForm.php';
     }
+
     public function list_depts()
     {
-        Print "<h2>Departments</h2>\n";
-        $query = sprintf("SELECT DISTINCT(dept_code) FROM Requires ORDER BY dept_code");
-        if ($result = mysqli_query($this->con, $query))
-        {
-            while ($row = mysqli_fetch_assoc($result))
-            {
-                Print "<form method=\"post\" action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\">\n";
-                Print "<fieldset class=\"input\">";
-                Print "<input type=\"hidden\" name=\"dept\" value=\"" . $row['dept_code'] ."\"/>\n";
-                Print "<input type=\"hidden\" name=\"course\" value=\"" . $row['course_number'] . "\"/>\n";
-                Print "<input type=\"submit\" class=\"link\" name=\"COMP\" value=\"" . $row['dept_code'] . "\"/>\n";
-                Print "<input type=\"hidden\" name=\"filter_action\" value=\"2\"/>\n";
-                Print "</fieldset>";
-                Print "</form>\n";
-            }
-        }
+        include 'include/list_depts.php';
     }
 
     public function list_courses()
-    {  
-        Print "<h2>Courses</h2>\n"; 
-        $query = "SELECT * FROM Requires WHERE ";
-        $query .= sprintf("dept_code = \"%s\" ", $_SESSION['dept']);
-        $query .= "ORDER BY course_number";
-        if ($result = mysqli_query($this->con, $query))
-        { 
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">\n";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"hidden\" name=\"filter_action\" value=\"1\"/>\n";
-            Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $_SESSION['dept'] . " [x]\"/>\n"; 
-            Print "</fieldset>";
-            Print "</form>\n";
-            while ($row = mysqli_fetch_assoc($result))
-            {
-                Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">\n";
-                Print "<fieldset class=\"input\">"; 
-                Print "<input type=\"hidden\" name=\"dept\" value=\"" . $row['dept_code'] ."\"/>\n";
-                Print "<input type=\"hidden\" name=\"course\" value=\"" . $row['course_number'] . "\"/>\n";
-                Print "<input type=\"submit\" class=\"link\" name=\"submit\" value=\"" . $row['dept_code'] ." [" . $row['course_number'] . "] [" . $row['section_code'] . $row['term_number'] . "]\"/>\n";
-                Print "<input type=\"hidden\" name=\"filter_action\" value=\"3\"/>\n";
-                Print "</fieldset>";
-                Print "</form>\n";
-            }   
-        }
+    {
+        include 'include/list_courses.php';  
     }  
 
     public function print_course()
@@ -170,61 +260,14 @@ class Order
 
 
     public function list_alpha_choices($title, $start, $middle, $end, $action)
-    {   
-        Print "<h2>" . $title . "</h2>";
-        $str = $alpha ='A';
-        while (strlen($str) <= 1)
-        {   
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">\n";
-            Print "<fieldset class=\"input\">\n";
-            Print "<input type=\"hidden\" name=\"" . $start;
-            Print "\" value=\"". (strlen($str) > 1 ? $str : $str++) . "\"/>\n";
-            Print "<input type=\"hidden\" name=\"" . $middle;
-            Print "\" value=\"" . (strlen($str) > 1 ? $str : $str++) . "\"/>\n";
-            if (strlen($str) > 1)
-                $str = 'Z';
-            Print "<input type=\"submit\" class=\"link\" name=\"COMP\" value=\"" . $alpha . " - " . $str . "\"/>\n";
-            Print "<input type=\"hidden\" name=\"" . $end . "\" value=\"" . $str++ . "\"/>\n";
-            Print "<input type=\"hidden\" name=\"" .$action ."_action\" value=\"2\"/>\n";
-            Print "</fieldset>\n";
-            Print "</form>\n";
-            $alpha = $str;
-        }
+    {
+        include 'include/list_alpha_choices.php';   
     }
 
 
     public function list_titles()
     {
-        Print "<h2>Titles</h2>";
-        $query =  "SELECT DISTINCT(SUBSTRING(title FROM 1 FOR 1)) ";
-        $query .= "FROM all_book_data  WHERE title ";
-        $query .= sprintf("REGEXP \"^[%s-%s]\" ", $_SESSION['tstart'], $_SESSION['tend']);
-        $query .= " ORDER BY title ";
-        if ($result = mysqli_query($this->con, $query))
-        {
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"hidden\" name=\"title_action\" value=\"1\"/>";
-            Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $_SESSION['tstart'] ." - " .        $_SESSION['tend'] . " [x]\"/>";
-            Print "</fieldset>";
-            Print "</form>";
-            while ($row = mysqli_fetch_array($result))
-            {
-                Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-                Print "<fieldset class=\"input\">";
-                Print "<input type=\"hidden\" name=\"talphachar\" value=\"" . $row[0] ."\">";
-                Print "<input type=\"submit\" class=\"link\" name=\"submit\" value=\"" . $row[0] . "\">";
-                Print "<input type=\"hidden\" name=\"title_action\" value=\"3\">\n";
-                Print "</fieldset>";
-                Print "</form>";
-            }
-        }
-        else
-        {
-            echo "The selected query failed on execution.";
-                    printf("<br/>Errormessage: %s\n", $this->con->error);
-        }
-
+        include 'include/list_titles.php';
     }
 
     public function list_final()
@@ -242,124 +285,13 @@ class Order
 
     public function list_alpha_authors()
     {
-        Print "<h2>Authors</h2>";
-        switch($_SESSION['filter_action'])
-        {
-        case 1:
-            $query =  "SELECT DISTINCT(SUBSTRING(family_name FROM 1 FOR 1)) ";
-            $query .= "FROM Author WHERE family_name ";
-            $query .= sprintf("REGEXP \"^[%s-%s]\" ", $_SESSION['start'], $_SESSION['end']);
-            break;
-        case 2:
-            $query =  "SELECT DISTINCT(SUBSTRING(a.family_name FROM 1 FOR 1)) ";
-            $query .= "FROM Written a INNER JOIN Requires b ON a.isbn = b.isbn ";
-            $query .= sprintf("WHERE b.dept_code = \"%s\" ", $_SESSION['dept']);
-            $query .= sprintf("AND family_name REGEXP \"^[%s-%s]\" ", $_SESSION['start'], $_SESSION['end']);
-            break;
-        case 3:
-            $query = "SELECT DISTINCT(SUBSTRING(a.family_name FROM 1 FOR 1)) ";
-            $query .= "FROM Written a INNER JOIN Requires b ON a.isbn = b.isbn ";
-            $query .= sprintf("WHERE b.dept_code = \"%s\" ", $_SESSION['dept']);
-            $query .= sprintf("AND b.course_number = \"%s\" ", $_SESSION['course']);
-            $query .= sprintf("AND family_name REGEXP \"^[%s-%s]\" ", $_SESSION['start'], $_SESSION['end']);
-            break;
-        default:
-            $query =  "SELECT DISTINCT(SUBSTRING(family_name FROM 1 FOR 1)) ";
-            $query .= "FROM Author WHERE family_name ";
-            $query .= sprintf("REGEXP \"^[%s-%s]\" ", $_SESSION['start'], $_SESSION['end']);
-            break;
-
-        }
-        if ($result = mysqli_query($this->con, $query))
-        {
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"hidden\" name=\"author_action\" value=\"1\"/>";
-            Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $_SESSION['start'] ." - " . $_SESSION['end'] . " [x]\"/>";
-            Print "</fieldset>";
-            Print "</form>";
-            while ($row = mysqli_fetch_array($result))
-            {
-                Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-                Print "<fieldset class=\"input\">";
-                Print "<input type=\"hidden\" name=\"alphachar\" value=\"" . $row[0] ."\">";
-                Print "<input type=\"submit\" class=\"link\" name=\"submit\" value=\"" . $row[0] . "\">";
-                Print "<input type=\"hidden\" name=\"author_action\" value=\"3\">\n";
-                Print "</fieldset>";
-                Print "</form>";
-            }
-        }
-        else
-        {
-        echo "The selected query failed on execution.\n";
-                    printf("<br/>Errormessage: %s\n", $this->con->error);
-        }
-
+        include 'include/list_alpha_authors.php';
     }
 
 
     public function list_authors($alphachar)
     {
-        Print "<h2>Authors</h2>";
-
-        $query = "SELECT DISTINCT(family_name), given_name  FROM all_book_data ";
-        $title_act = "";
-        switch ($_SESSION['title_action'])
-        {
-        case 2:
-            $title_act = sprintf(" AND title REGEXP \"^[%s-%s]\" ",$_SESSION['tstart'], $_SESSION['tend']);
-            break;
-        case 3:
-            $title_act = sprintf(" AND title LIKE \"%s%%\" ",$_SESSION['talphachar']);
-            break;
-        default:
-            break;
-
-        }
-        switch($_SESSION['filter_action'])
-        {
-        case 2:
-            $query .= " WHERE ";
-            $query .= sprintf("dept_code = \"%s\" ", $_SESSION['dept']);
-            $query .= sprintf("AND family_name LIKE \"%s%%\" ", $_SESSION['alphachar']);
-            break;
-        case 3:
-            $query .= sprintf(" WHERE dept_code = \"%s\" ", $_SESSION['dept']);
-            $query .= sprintf(" AND course_number = \"%s\" ", $_SESSION['course']);
-            $query .= sprintf(" AND family_name LIKE \"%s%%\" ", $_SESSION['alphachar']);
-            break;
-        default:
-            $query .= " WHERE family_name ";
-            $query .= sprintf("LIKE \"%s%%\"", $_SESSION['alphachar']);
-            break;
-        }
-
-        if ($result = mysqli_query($this->con, $query))
-        {   
-            Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-            Print "<fieldset class=\"input\">";
-            Print "<input type=\"hidden\" name=\"author_action\" value=\"2\">";
-            Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $alphachar . " [x]\">";
-            Print "</fieldset>";
-            Print "</form>";
-            while ($row = mysqli_fetch_assoc($result))
-            {   
-                Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-                Print "<fieldset class=\"input\">";
-                Print "<input type=\"hidden\" name=\"alphachar\" value=\"" . $alphachar ."\">";
-                Print "<input type=\"hidden\" name=\"family_name\" value=\"" . $row['family_name'] ."\">";
-                Print "<input type=\"hidden\" name=\"given_name\" value=\"" . $row['given_name'] . "\">";
-                Print "<input type=\"submit\" class=\"link\" name=\"submit\" value=\"" . $row['family_name'] . ", " . $row['given_name'] . "\">";
-                Print "<input type=\"hidden\" name=\"author_action\" value=\"4\">\n";
-                Print "</fieldset>";
-                Print "</form>";
-            }
-        }
-        else
-        {
-            echo "The selected query failed on execution.";
-                    printf("<br/>Errormessage: %s\n", $this->con->error);
-        }
+        include 'include/list_authors.php';
     }
 
     public function get_filter($case)
@@ -384,168 +316,14 @@ class Order
     }
 
     public function display_books($dept, $course)
-    {  
-        $query = "SELECT DISTINCT(isbn), title, price, image_url FROM all_book_data "; 
-        switch($_SESSION['filter_action'])
-        {       
-        case 1:
-        {
-            if ($_SESSION['author_action'] != 1)
-                $query .= " WHERE family_name ";
-
-            $quest = "";
-            $filters = $this->get_filter($_SESSION['author_action']);
-            if (isset($_SESSION['id_number']))
-            {
-                if ($_SESSION['author_action'] == 1)
-                    $quest = " WHERE ";
-                else
-                    $quest = " AND ";
-                $quest .= sprintf(" id_number = \"%s\" ", $_SESSION['id_number']);
-            }   
-
-
-            switch($_SESSION['title_action'])
-            {
-            case 2:
-                if ( $_SESSION['author_action'] == 1 && !isset($_SESSION['id_number']))
-                    $endline = " WHERE ";
-                else
-                    $endline = " AND ";
-
-                $endline .= sprintf(" title REGEXP \"^[%s-%s]\" ", $_SESSION['tstart'], $_SESSION['tend']);
-                break;
-            case 3:
-                if ( $_SESSION['author_action'] == 1 && !isset($_SESSION['id_number']))
-                    $endline = " WHERE ";
-                else
-                    $endline = " AND ";
-
-                $endline .= sprintf(" title LIKE \"%s%%\" ", $_SESSION['talphachar']);
-                break;
-            default:
-                break;
-            } 
-
-            $query .= $filters . $quest . $endline . " ORDER BY title";
-            break;
-        }
-        case 2:
-            $query .= sprintf(" WHERE dept_code = \"%s\" ", $_SESSION['dept']);
-            if ($_SESSION['author_action'] != 1)
-            {                       
-                $query .= " AND family_name ";
-            }
-            $quest = "";
-            $filters = $this->get_filter($_SESSION['author_action']);
-            $endline = "";
-
-            switch($_SESSION['title_action'])
-            {
-            case 2:
-                $endline .= sprintf(" AND title REGEXP \"^[%s-%s]\" ", $_SESSION['tstart'], $_SESSION['tend']);
-                break;           
-            case 3:
-                $endline .= sprintf(" AND title LIKE \"%s%%\" ", $_SESSION['talphachar']);
-                break;
-            default:                                 
-                break;
-            }
-
-            if (isset($_SESSION['id_number']))
-            { 
-                $quest = sprintf(" AND id_number = \"%s\" ", $_SESSION['id_number']);
-            } 
-
-            $query .= $filters . $quest . $endline . " ORDER BY title";
-            break;
-            case 3:
-
-                $query .= sprintf(" WHERE dept_code = \"%s\" ", $_SESSION['dept']);
-                $query .= sprintf(" AND course_number = \"%s\" ", $_SESSION['course']);
-
-                if ($_SESSION['author_action'] != 1)
-                    $query .= " AND family_name ";
-
-                $quest = "";
-                $filters = $this->get_filter($_SESSION['author_action']);
-
-                if (isset($_SESSION['id_number']))
-                    $quest = sprintf(" AND id_number = \"%s\" ", $_SESSION['id_number']);
-
-                $endline = "";
-
-                switch($_SESSION['title_action'])
-                {
-                case 2:
-                    $endline .= sprintf(" AND title REGEXP \"^[%s-%s]\" ", $_SESSION['tstart'], $_SESSION['tend']);
-                    break;
-                case 3:
-                    $endline .= sprintf(" AND title LIKE \"%s%%\" ", $_SESSION['talphachar']);
-                    break;
-                default:
-                    break;
-                }
-
-                $query .= $filters . $quest . $endline . " ORDER BY title";
-                break;
-
-            default:
-                $query = sprintf("SELECT * FROM Book");
-                break;
-        }
-        if ($result = mysqli_query($this->con, $query))
-        {    
-            if (mysqli_num_rows($result) == 0)
-                Print "<h2> No books match your search.</h2>";   
-            while ($row = mysqli_fetch_assoc($result))
-            {   
-                Print "<div class=\"item_box\">\n";
-                Print "<img src=\"" .$row['image_url'] . "\" alt=\"book_image\"/>\n";
-                Print "<h2 class=\"title\">" . htmlspecialchars($row['title']) . "</h2>\n";
-                Print "<p>Author:" . $this->get_authors($row['isbn']);
-                Print "</p>\n";
-                Print "<p class=\"isbn\">ISBN: " .$row['isbn'] . "</p>\n";
-                Print "<p class=\"price\">$" .$row['price'] / 100 . "</p>\n";
-                Print "<form action=\"\" method=\"post\">\n";
-                Print "<fieldset class=\"input\">\n";
-                Print "<input type=\"hidden\" name=\"cart_action\" value=\"1\" />\n";
-                Print "<input type=\"hidden\" name=\"isbn\" value=\"" . $row['isbn'] . "\"/>\n";
-                Print "<input type=\"hidden\" name=\"price\" value=\"" . $row['price'] . "\"/>\n";
-                Print "<input type=\"hidden\" name=\"title\" value=\"" . $row['title'] . "\"/>\n";
-                Print "<input type=\"hidden\" name=\"qty\" value=\"1\"/>\n";
-                Print "<input type=\"submit\" name=\"add_to_cart\" value=\"Add to Cart\"/>\n";
-                Print "</fieldset>\n";
-                Print "</form>\n";
-                Print "</div>\n";
-            }
-        }
-        else
-        {
-            echo "The selected query failed on execution.\n";
-            printf("<br/>Errormessage: %s\n", $this->con->error);
-        }
+    {
+        include 'include/display_books.php';  
     }
 
 
     private function get_authors($isbn)
     {
-        $authors = "";
-        $query = "SELECT family_name, given_name FROM Written ";
-        $query .= sprintf("WHERE isbn = \"%s\" ", $isbn);
-        if ($result = mysqli_query($this->con, $query))
-        {
-            while ($row = mysqli_fetch_assoc($result))
-            {
-                $authors .= " " . $row['family_name'] . " " . $row['given_name'] ." | ";
-            }
-
-        }
-        else
-        {   
-            echo "The selected query failed on execution.\n";
-            printf("<br/>Errormessage: %s\n", $this->con->error);
-        }
+        include 'include/get_authors.php';
         return $authors;
     }
 

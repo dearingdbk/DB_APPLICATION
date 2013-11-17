@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php
-$store = "1";
+$_SESSION['store'] = 1;
 
 $mysq = mysqli_connect("localhost", "guest", "guestaccount", "bookstore");
 
@@ -17,7 +17,7 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-$query = sprintf("SELECT * FROM Bookstore WHERE store_id = %s", $store);
+$query = sprintf("SELECT * FROM Bookstore WHERE store_id = %s", $_SESSION['store']);
 if ($result = mysqli_query($mysq, $query)) 
 {
 
@@ -73,7 +73,7 @@ if ($result = mysqli_query($mysq, $query))
 
 <?php
 
-/*if(!$cart && !isset($_SESSION['cart_action']) && !isset($_POST['cart_action']))*/
+
 if(!$cart && !isset($_SESSION['cart']))
 {
     $_SESSION['cart'] = new order();
@@ -89,8 +89,8 @@ if (isset($_POST['cart_action']))
     switch($_POST['cart_action'])
     {
     case 1:
-       $cart->add_item($_POST['isbn'], $_POST['title'], $_POST['price'], $_POST['qty']); 
-            break;
+        $cart->add_item($_POST['isbn'], $_POST['title'], $_POST['price'], $_POST['qty']); 
+        break;
     case 2:
         $cart->delete_item($_POST['isbn']); 
         break;
@@ -108,7 +108,11 @@ Print "<h2 id=\"store\">" . $storename . "</h2>";
 Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">";
 Print "<fieldset class=\"input\">";
 Print "<input type=\"hidden\" name=\"cart_view\" value=\"1\" />";
-Print "<input type=\"image\" src=\"images/shop_cart.png\" alt=\"Submit\">". $cart->print_cart_qty();
+Print "<input type=\"image\" src=\"images/shop_cart.png\" alt=\"Submit\">";
+if (isset($_POST['cart_view']) && $_POST['cart_view'] == 2)
+    ;    
+else
+    Print $cart->print_cart_qty();
 Print "</fieldset>";
 Print "</form>";
 
@@ -241,19 +245,34 @@ default:
 <?php
 
 if (isset($_POST['cart_view']))
-{    switch($_POST['cart_view'])
+{    
+    switch($_POST['cart_view'])
     {
     case 1:
         $_SESSION['cart_view'] = $_POST['cart_view'];
         break;
     case 2:
-        $_SESSION['cart'] = new order();
-    // FALL THROUGH 
+        $cart->empty_cart();
+        // FALL THROUGH 
     case 3:
         unset($_SESSION['cart_view']);
         break;
     case 4:
         $_SESSION['checkout'] = 1;
+        break;
+    case 5:
+        if (isset($_POST['login_id']) && isset($_POST['login_pwd']))
+        {
+            echo $cart->login_id($_POST['login_id'], $_POST['login_pwd']);
+        }
+        break;
+    case 6:
+        unset($_SESSION['login_id']);
+        break;
+    case 7:
+        $cart->confirm_order();
+        break;
+    default:
         break;
     }
 }
