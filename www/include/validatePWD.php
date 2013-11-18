@@ -1,4 +1,3 @@
-        
 <?php
 $login_pwd = trim($login_pwd);
 $login_pwd = stripslashes($login_pwd);

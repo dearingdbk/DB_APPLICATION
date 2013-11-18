@@ -8,70 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php
-$_SESSION['store'] = 1;
 
-$mysq = mysqli_connect("localhost", "guest", "guestaccount", "bookstore");
-
-/* check connection */
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-}
-$query = sprintf("SELECT * FROM Bookstore WHERE store_id = %s", $_SESSION['store']);
-if ($result = mysqli_query($mysq, $query)) 
-{
-
-    /* fetch associative array */
-    while ($row = mysqli_fetch_assoc($result))
-    {
-        $storename = $row['store_name'];
-    }
-
-    /* free result set */
-    mysqli_free_result($result);
-}
-
-?>
-<title><?php echo $storename; ?></title>
-
-<link rel="stylesheet" type="text/css" href="style.css" />
-<!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" href="style-ie.css" />
-<![endif]-->
-	<script type="text/javascript">
-<!-- function showItems(str)
-{
-	if (str.user=="")
-	{
-		document.getElementById("scroll").innerHTML="";
-		return;
-	}
-	if (window.XMLHttpRequest)
-	{// code for IE7+, Firefox, Chrome, Opera, Safari
-		xmlhttp=new XMLHttpRequest();
-	}
-	else
-	{// code for IE6, IE5
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function()
-	{
-		if (xmlhttp.readyState==4 && xmlhttp.status==200)
-		{
-		   document.getElementById("scroll").innerHTML=xmlhttp.responseText;
-		}
-	}
-	xmlhttp.open("GET","getItems.php?user=" + str.user + "&myquery=" + str.my_query,true);
-	xmlhttp.send();
-} -->
-
-
-</script>
-
-</head>
-<body>
-
-<?php
+if (!isset($_SESSION['store']))
+    $_SESSION['store'] = 1;
 
 
 if(!$cart && !isset($_SESSION['cart']))
@@ -81,8 +20,26 @@ if(!$cart && !isset($_SESSION['cart']))
 
 $cart = $_SESSION['cart'];
 $cart->connectToDB("guest", "guestaccount");
+
+if (!isset($_SESSION['store_name']))
+    $cart->set_store_name();
+
+Print "<title>" . $_SESSION['store_name'] . "</title>";
 ?>
 
+<link rel="stylesheet" type="text/css" href="style.css" />
+<!--[if lt IE 7]>
+    <link rel="stylesheet" type="text/css" href="style-ie.css" />
+<![endif]-->
+
+</head>
+<body>
+
+<!-- 
+ *
+ * Handle POST actions to the cart.
+ * such as adding one to cart or deleting.
+ *-->
 <?php 
 if (isset($_POST['cart_action']))
 {
@@ -105,30 +62,34 @@ if (isset($_POST['cart_action']))
     }
 }
 
-
 ?>
 <div id="page-wrap">
 <div id="inside">
 
 <div id="header">
+
 <?php 
-Print "<h2 id=\"store\">" . $storename . "</h2>";
+
+Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
 Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">";
 Print "<fieldset class=\"input\">";
 Print "<input type=\"hidden\" name=\"cart_view\" value=\"1\" />";
 Print "<input type=\"image\" src=\"images/shop_cart.png\" alt=\"Submit\">";
 if (isset($_POST['cart_view']) && $_POST['cart_view'] == 2)
-    ;    
+    ; // Do Nothing.    
 else
     Print $cart->print_cart_qty();
 Print "</fieldset>";
 Print "</form>";
 
 ?>
+
 </div>
 
 <div id="left-sidebar">
+
 <?php
+
 echo "<div id=\"student\">";
 if (isset($_POST['drop_id']))
     unset($_SESSION['id_number']);
@@ -138,11 +99,10 @@ if (isset($_POST['id_number']))
 else
     $cart->print_IDForm();
 
-
 echo "</div><div id=\"department\">";
 
 if (isset($_POST['given_name']))
-    $_SESSION['given_name'] = $_POST['given_name'];
+    $_SESSION['given_name'] = $cart->sanitize($_POST['given_name']);
 
 if (isset($_POST['family_name']))
     $_SESSION['family_name'] = $_POST['family_name'];

@@ -74,6 +74,7 @@ if ($rtn_val)
     mysqli_commit($this->con);
     $_SESSION['confirmation'] = $order_id;
     $this->empty_cart();
+    unset($_SESSION['login_id']);
 }
 else
 {

@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * @date - 17 Nov 2013 
  * @name - COMP DB 
@@ -60,7 +59,8 @@ class Order
 
     /** 
      * Once checkout has been selected displays table of items in cart.
-     *
+     * Displays login dialog if user not logged in.
+     * Displays confirm order button if they are logged in.
      */
     public function get_items()
     {
@@ -203,31 +203,45 @@ class Order
         include 'include/print_IDForm.php';
     }
 
-
+    /**
+     * Lists departments available from the database.
+     */ 
     public function list_depts()
     {
         include 'include/list_depts.php';
     }
 
+
+    /**
+     *  Lists available courses with books required.
+     */ 
     public function list_courses()
     {
         include 'include/list_courses.php';  
     }  
 
+    /**
+     * Outputs the course name selected.
+     * @uses createForm - 
+     */ 
     public function print_course()
     {
         Print "<h2>Courses</h2>\n";
-    
+
         $this->createForm("",
             array(array('type' => 'hidden', 'name' => 'filter_action', 'value' => 2),
             array('type' => 'submit', 'name' => 'submit', 
             'value' => $_SESSION['dept'] ." ".$_SESSION['course'] . " [x]", 'class' => 'backl')));
     }
 
+    /**
+     * Validates entered student id to a student from database.
+     * @uses createForm - 
+     */ 
     public function print_author()
     {   
         Print "<h2>Authors</h2>\n";
-    
+
         $this->createForm("",
             array(array('type' => 'hidden', 'name' => 'author_action', 'value' => 3),
             array('type' => 'submit', 'name' => 'submit', 
@@ -235,17 +249,31 @@ class Order
 
     }
 
+    /**
+     * Validates entered student id to a student from database.
+     * @param title - title of the book.
+     * @param start - the starting character in a set of 3.
+     * @param middle - the middle character in a set of 3.
+     * @param end - the last character in a set of 3.
+     * @param action - the action name to post, either author ot title.
+     */ 
     public function list_alpha_choices($title, $start, $middle, $end, $action)
     {
         include 'include/list_alpha_choices.php';   
     }
 
-
+    /** 
+     * Lists title characters.
+     */   
     public function list_titles()
     {
         include 'include/list_titles.php';
     }
 
+    /** 
+     * Prints the final choice letter of titles.
+     * @uses createForm -
+     */   
     public function list_final()
     {
         Print "<h2>Titles</h2>";
@@ -256,18 +284,29 @@ class Order
             'value' => $_SESSION['talphachar'] . " [x]", 'class' => 'backl')));
     }
 
-
+    /** 
+     * Lists the Letters available for choice corresponding to available authors.
+     * @uses createForm - 
+     */   
     public function list_alpha_authors()
     {
         include 'include/list_alpha_authors.php';
     }
 
-
+    /** 
+     * Lists the available authors acording to selected alpachar.
+     * @uses creatForm - displays 
+     * @param alphachar - the selected character.
+     */   
     public function list_authors($alphachar)
     {
         include 'include/list_authors.php';
     }
 
+    /** 
+     * Returns whether the filter should search fo REGEXP, LIKE, or =  
+     * @param case - the case value to use. 
+     */   
     public function get_filter($case)
     {
         $this_filter = "";
@@ -289,18 +328,33 @@ class Order
         return $this_filter;
     }
 
+    /** 
+     * Prints book data out. 
+     * @uses get_filter -  
+     * @uses createForm - 
+     * @param dept - the department selected.
+     * @param course - the course selected.
+     */   
     public function display_books($dept, $course)
     {
         include 'include/display_books.php';  
     }
 
-
+    /** 
+     * Prints all authors associated with a particular book. 
+     * @param isbn - the isbn to search for authors with.
+     */   
     private function get_authors($isbn)
     {
         include 'include/get_authors.php';
         return $authors;
     }
 
+    /** 
+     * Prints all authors associated with a particular book. 
+     * @param form_data- any extra input required in the form.
+     * @param input_items The multidimensional array containing input fields.
+     */   
     public function createForm($form_data, $input_items) 
     {
         Print "\n<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\"";
@@ -337,5 +391,43 @@ class Order
 
         Print "</fieldset>\n</form>\n";
     }
+
+
+    /** 
+     * Prints all authors associated with a particular book. 
+     * @param isbn - the isbn to search for authors with.
+     */   
+    public function set_store_name()
+    {
+
+
+        $query = sprintf("SELECT * FROM Bookstore WHERE store_id = %s", $_SESSION['store']);
+        if ($result = mysqli_query($this->con, $query))
+        {
+
+            /* fetch associative array */
+            while ($row = mysqli_fetch_assoc($result))
+            {
+                $_SESSION['store_name'] = $row['store_name'];
+            }
+
+            echo "DONKEY SHIT ";
+            /* free result set */
+            mysqli_free_result($result);
+        }
+    }
+
+    /** 
+     * Prints all authors associated with a particular book. 
+     * @param isbn - the isbn to search for authors with.
+     */
+    public function sanitize($input)
+    {
+        $input = trim($input);
+        $input = stripslashes($input);
+        $input = htmlspecialchars($input);
+        return $input;
+    }
+
 }
 ?>
