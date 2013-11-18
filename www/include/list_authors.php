@@ -33,24 +33,20 @@ default:
     break;
 } 
 if ($result = mysqli_query($this->con, $query))
-{   
-    Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-    Print "<fieldset class=\"input\">";
-    Print "<input type=\"hidden\" name=\"author_action\" value=\"2\">";
-    Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $alphachar . " [x]\">";
-    Print "</fieldset>";
-    Print "</form>";
+{
+    $this->createForm("",
+        array(array('type' => 'hidden', 'name' => 'author_action', 'value' => 2),
+        array('type' => 'submit', 'name' => 'submit', 'value' => $alphachar . " [x]", 'class' => 'backl')));   
+
     while ($row = mysqli_fetch_assoc($result))
-    {   
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-        Print "<fieldset class=\"input\">";
-        Print "<input type=\"hidden\" name=\"alphachar\" value=\"" . $alphachar ."\">";
-        Print "<input type=\"hidden\" name=\"family_name\" value=\"" . $row['family_name'] ."\">";
-        Print "<input type=\"hidden\" name=\"given_name\" value=\"" . $row['given_name'] . "\">";
-        Print "<input type=\"submit\" class=\"link\" name=\"submit\" value=\"" . $row['family_name'] . ", " .  $row['given_name'] . "\">";
-        Print "<input type=\"hidden\" name=\"author_action\" value=\"4\">\n";
-        Print "</fieldset>";
-        Print "</form>";
+    {
+        $this->createForm("",
+            array(array('type' => 'hidden', 'name' => 'alphachar', 'value' => $alphachar),
+            array('type' => 'hidden', 'name' => 'family_name', 'value' => $row['family_name']),
+            array('type' => 'hidden', 'name' => 'given_name', 'value' => $row['given_name']),
+            array('type' => 'hidden', 'name' => 'author_action', 'value' => 4),
+            array('type' => 'submit', 'name' => 'submit', 
+            'value' => $row['family_name'] . ", " . $row['given_name'], 'class' => 'link')));   
     }
 }
 else

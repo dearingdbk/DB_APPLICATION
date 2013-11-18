@@ -9,7 +9,6 @@ if ($result = mysqli_query($this->con, $query))
     {
         $authors .= " " . $row['family_name'] . " " . $row['given_name'] ." | ";
     }
-
 }
 else
 {   

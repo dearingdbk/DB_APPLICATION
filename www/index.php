@@ -92,7 +92,15 @@ if (isset($_POST['cart_action']))
         $cart->add_item($_POST['isbn'], $_POST['title'], $_POST['price'], $_POST['qty']); 
         break;
     case 2:
-        $cart->delete_item($_POST['isbn']); 
+        $cart->delete_item($_POST['isbn']);
+        break;
+    case 3:
+        $cart->increment($_POST['isbn']);
+        break;
+    case 4:
+        $cart->decrement($_POST['isbn']);
+        break;
+    default:
         break;
     }
 }

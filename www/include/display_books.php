@@ -152,16 +152,14 @@ if ($result = mysqli_query($this->con, $query))
         Print "</p>\n";
         Print "<p class=\"isbn\">ISBN: " .$row['isbn'] . "</p>\n";
         Print "<p class=\"price\">$" .$row['price'] / 100 . "</p>\n";
-        Print "<form action=\"\" method=\"post\">\n";
-        Print "<fieldset class=\"input\">\n";
-        Print "<input type=\"hidden\" name=\"cart_action\" value=\"1\" />\n";
-        Print "<input type=\"hidden\" name=\"isbn\" value=\"" . $row['isbn'] . "\"/>\n";
-        Print "<input type=\"hidden\" name=\"price\" value=\"" . $row['price'] . "\"/>\n";
-        Print "<input type=\"hidden\" name=\"title\" value=\"" . $row['title'] . "\"/>\n";
-        Print "<input type=\"hidden\" name=\"qty\" value=\"1\"/>\n";
-        Print "<input type=\"submit\" name=\"add_to_cart\" value=\"Add to Cart\"/>\n";
-        Print "</fieldset>\n";
-        Print "</form>\n";
+        $this->createForm("",
+            array(array('type' => 'hidden', 'name' => 'cart_action', 'value' => 1),
+                  array('type' => 'hidden', 'name' => 'isbn', 'value' => $row['isbn']),
+                  array('type' => 'hidden', 'name' => 'price', 'value' => $row['price']),
+                  array('type' => 'hidden', 'name' => 'title', 'value' => $row['title']),
+                  array('type' => 'hidden', 'name' => 'qty', 'value' => 1),
+                  array('type' => 'submit', 'name' => 'add_to_cart', 'value' => 'Add to Cart')));
+
         Print "</div>\n";
     }
 }

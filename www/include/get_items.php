@@ -28,65 +28,59 @@ else
         Print "<td>" . $isbn . "</td>\n";
         Print "<td>" . $dingo['title'] . "</td>\n";
         Print "<td>$" . $dingo['price'] / 100 . "</td>\n";
-        Print "<td>" . $dingo['qty'] . "</td>\n";
+        Print "<td>" . $dingo['qty'];
+
+        $this->createForm("id=\"increase\"",
+            array(array('type' => 'hidden', 'name' => 'isbn', 'value' => $isbn),
+            array('type' => 'hidden', 'name' => 'cart_action', 'value' => 3),
+            array('type' => 'image', 'src' => 'images/increase.png', 'alt' => 'increase')));
+        
+        $this->createForm("id=\"decrease\"",
+            array(array('type' => 'hidden', 'name' => 'isbn', 'value' => $isbn),
+            array('type' => 'hidden', 'name' => 'cart_action', 'value' => 4),
+            array('type' => 'image', 'src' => 'images/decrease.png', 'alt' => 'decrease')));
+
+        Print "</td>\n";
         Print "<td>";
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" >";
-        Print "<fieldset class=\"input\">";
-        Print "<input type=\"hidden\" name=\"cart_action\" value=\"2\" />";
-        Print "<input type=\"hidden\" name=\"isbn\" value=\"". $isbn  ."\" />";
-        Print "<input type=\"image\" src=\"images/close.png\" alt=\"remove\">";
-        Print "</fieldset>";
-        Print "</form>";
+
+        $this->createForm("",
+            array(array('type' => 'hidden', 'name' => 'isbn', 'value' => $isbn),
+            array('type' => 'hidden', 'name' => 'cart_action', 'value' => 2),
+            array('type' => 'image', 'src' => 'images/close.png', 'alt' => 'remove')));
+
         Print "</tr>\n";
         $check = 1 - $check;
     } 
     Print "</table>\n";
 }
 
+$this->createForm("",
+    array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 3),
+    array('type' => 'image', 'src' => 'images/goback.png', 'alt' => 'continue shopping')));
 
-
-
-Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" >";
-Print "<fieldset class=\"input\">";
-Print "<input type=\"hidden\" name=\"cart_view\" value=\"3\" />";
-Print "<input type=\"image\" src=\"images/goback.png\" value=\"continue shopping\">";
-Print "</fieldset>";
-Print "</form>";
 if (!empty($this->items))
 {
-    Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-    Print "<fieldset class=\"input\">";
-    Print "<input type=\"hidden\" name=\"cart_view\" value=\"2\" />";
-    Print "<input type=\"image\" src=\"images/trash.png\" alt=\"empty cart\">";
-    Print "</fieldset>";
-    Print "</form>";     
+    $this->createForm("",
+        array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 2),
+        array('type' => 'image', 'src' => 'images/trash.png', 'alt' => 'empty_cart')));
     if (isset($_SESSION['login_id']))
     {
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-        Print "<fieldset class=\"input\">";
-        Print "<input type=\"hidden\" name=\"cart_view\" value=\"6\" />";
-        Print "<input type=\"image\" src=\"images/logout.png\" alt=\"logout\">";
-        Print "</fieldset>";
-        Print "</form>";
+        $this->createForm("",
+            array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 6),
+            array('type' => 'image', 'src' => 'images/logout.png', 'alt' => 'logout')));
 
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" id=\"entry_box\">";
-        Print "<fieldset class=\"input\">";
-        Print "<h2>" . $_SESSION['login_id'] . "</h2>";
-        Print "<input type=\"hidden\" name=\"cart_view\" value=\"7\" />";
-        Print "<input type=\"submit\" name=\"submit\" value=\"confirm order\">";
-        Print "</fieldset>";            
-        Print "</form>"; 
+
+        $this->createForm("id=\"entry_box\" > <h2>" . $_SESSION['login_id'] . "</h2" ,
+            array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 7), 
+            array('type' => 'submit', 'name' => 'submit', 'value' => 'confirm order')));
     }
     else
     {
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" id=\"entry_box\">";
-        Print "<fieldset class=\"input\">";
-        Print "<input type=\"text\" name=\"login_id\" required placeholder=\"Enter ID Number\" /><br/>";
-        Print "<input type=\"password\" name=\"login_pwd\" required placeholder=\"Enter Password\" /><br/>";
-        Print "<input type=\"hidden\" name=\"cart_view\" value=\"5\" />";
-        Print "<input type=\"submit\" name=\"submit\" value=\"checkout\">";
-        Print "</fieldset>";
-        Print "</form>";
+        $this->createForm("id=\"entry_box\"",
+            array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 5),
+            array('type' => 'text', 'name' => 'login_id', 'place' => 'Enter ID Number'),
+            array('type' => 'password', 'name' => 'login_pwd', 'place' => 'Enter ID Number'),
+            array('type' => 'submit', 'name' => 'submit', 'value' => 'confirm order')));
     }
 }
 ?>

@@ -315,6 +315,10 @@ GRANT SELECT
     ON bookstore.Author
     TO 'guest'@'localhost' IDENTIFIED BY 'guestaccount';
 
+GRANT LOCK TABLES
+	ON bookstore.*
+	TO 'guest'@'localhost';
+
 GRANT SELECT
     ON bookstore.Book
     TO 'guest'@'localhost';
@@ -363,7 +367,7 @@ GRANT SELECT
     ON bookstore.Section
     TO 'guest'@'localhost';
 
-GRANT SELECT
+GRANT SELECT, UPDATE
     ON bookstore.Stocks
     TO 'guest'@'localhost';
 

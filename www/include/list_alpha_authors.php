@@ -29,22 +29,19 @@ default:
 
 }   
 if ($result = mysqli_query($this->con, $query))
-{   
-    Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-    Print "<fieldset class=\"input\">";
-    Print "<input type=\"hidden\" name=\"author_action\" value=\"1\"/>";
-    Print "<input type=\"submit\" class=\"backl\" name=\"submit\" value=\"" . $_SESSION['start'] ." - " .      $_SESSION['end'] . " [x]\"/>";
-    Print "</fieldset>";
-    Print "</form>";
+{
+    $this->createForm("",
+        array(array('type' => 'hidden', 'name' => 'author_action', 'value' => 1),
+        array('type' => 'submit', 'name' => 'submit', 
+        'value' => $_SESSION['start'] . " - " . $_SESSION['end'] . " [x]", 'class' => 'backl')));   
+
     while ($row = mysqli_fetch_array($result))
     {
-        Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\">";
-        Print "<fieldset class=\"input\">";
-        Print "<input type=\"hidden\" name=\"alphachar\" value=\"" . $row[0] ."\">";
-        Print "<input type=\"submit\" class=\"link\" name=\"submit\" value=\"" . $row[0] . "\">";
-        Print "<input type=\"hidden\" name=\"author_action\" value=\"3\">\n";
-        Print "</fieldset>";
-        Print "</form>";
+        $this->createForm("",
+            array(array('type' => 'hidden', 'name' => 'alpha_char', 'value' => $row[0]),
+            array('type' => 'hidden', 'name' => 'author_action', 'value' => 3),
+            array('type' => 'submit', 'name' => 'submit', 
+            'value' => $row[0], 'class' => 'link')));
     }   
 }       
 else    
