@@ -155,8 +155,6 @@ if ($result = mysqli_query($this->con, $query))
         $this->createForm("",
             array(array('type' => 'hidden', 'name' => 'cart_action', 'value' => 1),
                   array('type' => 'hidden', 'name' => 'isbn', 'value' => htmlspecialchars($row['isbn'])),
-                  array('type' => 'hidden', 'name' => 'price', 'value' => $row['price']),
-                  array('type' => 'hidden', 'name' => 'title', 'value' => $row['title']),
                   array('type' => 'hidden', 'name' => 'qty', 'value' => 1),
                   array('type' => 'submit', 'name' => 'add_to_cart', 'value' => 'Add to Cart')));
 

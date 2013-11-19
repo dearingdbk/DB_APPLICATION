@@ -45,9 +45,8 @@ if (isset($_POST['cart_action']))
     switch($_POST['cart_action'])
     {
     case 1:
-        if (isset($_POST['isbn']) && isset($_POST['title'])
-            && isset($_POST['price']) && isset($_POST['qty'])) 
-        $cart->add_item($_POST['isbn'], $_POST['title'], $_POST['price'], $_POST['qty']); 
+        if (isset($_POST['isbn']) && isset($_POST['qty'])) 
+        $cart->add_item($_POST['isbn'], $_POST['qty']); 
         break;
     case 2:
         if (isset($_POST['isbn']))
@@ -74,7 +73,7 @@ if (isset($_POST['cart_action']))
 
 <?php 
 
-Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
+//Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
 
 Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">\n";
 Print "<fieldset class=\"input\">\n";

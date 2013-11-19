@@ -120,18 +120,25 @@ class Order
      * @param price - The price of the book being added.
      * @param qty - the quantity of the book to add.
      */
-    public function add_item($isbn, $title, $price, $qty)
+    public function add_item($isbn, $qty)
     {
 
         if (array_key_exists($isbn, $this->items)) 
         {
-
             $this->items[$isbn]["qty"] += $qty;
         } 
-        else
+        else if ($this->validISBN($isbn) && $qty > 0)
         {
-            $this->items[$isbn] = array("qty" => $qty, "price" => $price, "title" => $title);
-        } 
+            $query = sprintf("SELECT title, price From Book WHERE isbn = \"%s\" ", $isbn);
+            if ($result = mysqli_query($this->con, $query))
+            {
+
+                $row = mysqli_fetch_assoc($result);
+                mysqli_free_result($result);
+                $this->items[$isbn] = array("qty" => $qty, "price" => $row['price'], "title" => $row['title']);
+            }
+        }
+
     }
 
     /** 
@@ -439,12 +446,54 @@ class Order
      * Prints all authors associated with a particular book. 
      * @param isbn - the isbn to search for authors with.
      */
-    public function sanitize($input)
+    public function sanitize($san_input)
     {
-        $input = trim($input);
-        $input = stripslashes($input);
-        $input = htmlspecialchars($input);
-        return $input;
+        $san_input = trim($san_input);
+        $san_input = stripslashes($san_input);
+        $san_input = preg_replace ('/<[^>]*>/', ' ', $san_input);
+        $san_input = htmlspecialchars($san_input);
+        return $san_input;
+    }
+
+    /** 
+     * Validates isbn as valid isbn stored in the data base.
+     * @param isbn - the isbn to search for authors with.
+     * @uses is_valid_isbn.
+     */
+    private function validISBN($isbn)
+    {
+        $isbn = $this->sanitize($isbn);
+
+        if (preg_match("/^[0-9]{3}-[0-1]-[0-9\-]+-[0-9a-zA-Z]$/",$isbn))
+        {
+            if ($this->is_isbn_valid(str_replace('-', '', $isbn)))
+            {
+                $query = sprintf("SELECT COUNT(isbn) From Book WHERE isbn = \"%s\" ", $isbn);
+                if ($result = mysqli_query($this->con, $query))
+                {
+                    /* fetch associative array */
+
+                    $row = mysqli_fetch_array($result);
+                    mysqli_free_result($result);
+                    return $row[0] != 0;
+                }
+            }
+        }
+        return false;
+
+    }
+
+
+    /*
+     * @ WIKI CODE
+     *
+     */  
+    private function is_isbn_valid($n)
+    {
+        $check = 0;
+        for ($i = 0; $i < 13; $i+=2) $check += substr($n, $i, 1);
+        for ($i = 1; $i < 12; $i+=2) $check += 3 * substr($n, $i, 1);
+        return $check % 10 == 0;
     }
 }
 ?>

@@ -242,5 +242,5 @@
 978-1-872197-10-8,"Connery","Shaun"
 978-0-201-39126-0,"Dalton","Timothy"
 978-0-201-39519-3,"Craig","Daniel"
-978-0-201-39331-X,"Brosnan","Pierce"
+978-0-201-39331-6,"Brosnan","Pierce"
 978-0-201-42271-9,"MacQueen","Steve"

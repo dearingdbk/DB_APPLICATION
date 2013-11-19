@@ -4,7 +4,7 @@
 978-1-872197-10-8,"Hitlers War and the War Path",2005,8819,images/image.png,1,872197
 978-0-201-39126-0,"Computer Confluence:Exploring Tomorrow's Technology",2008,6599,images/image.png,0,201
 978-0-201-39519-3,"C++ for C Programmers",2009,9686,images/image.png,0,201
-978-0-201-39331-X,"College Algebra: Graphs & Models",2010,7865,images/image.png,0,201
+978-0-201-39331-6,"College Algebra: Graphs & Models",2010,7865,images/image.png,0,201
 978-0-201-42271-9,"Visual Objects:A Programmer's Guide",2003,11233,images/image.png,0,201
 978-0-04-943050-1,"The Weimar Republic",1988,1345,images/image.png,0,4
 978-0-04-944009-8,"World of the French Revolution (Great revolutions series)",1971,1345,images/image.png,0,4
