@@ -22,7 +22,7 @@ class Order
 
 
     /**
-     * Validates entered student id to a student from database.
+     * Connects to mysql database.
      * @param user - user name to login to mysql server.
      * @param passwd - password of user to login as.
      */

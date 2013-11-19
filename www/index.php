@@ -73,7 +73,7 @@ if (isset($_POST['cart_action']))
 
 <?php 
 
-//Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
+Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
 
 Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">\n";
 Print "<fieldset class=\"input\">\n";
