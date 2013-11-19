@@ -38,7 +38,7 @@ if ($result = mysqli_query($this->con, $query))
     while ($row = mysqli_fetch_array($result))
     {
         $this->createForm("",
-            array(array('type' => 'hidden', 'name' => 'alpha_char', 'value' => $row[0]),
+            array(array('type' => 'hidden', 'name' => 'alphachar', 'value' => $row[0]),
             array('type' => 'hidden', 'name' => 'author_action', 'value' => 3),
             array('type' => 'submit', 'name' => 'submit', 
             'value' => $row[0], 'class' => 'link')));

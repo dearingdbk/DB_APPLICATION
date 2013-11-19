@@ -50,7 +50,11 @@ else
 
         Print "</tr>\n";
         $check = 1 - $check;
-    } 
+    }
+    Print "<tr><th colspan=\"4\">TOTAL</th>";
+    Print "<td id=\"order_total\">";
+    printf("$%.2f ", $this->print_cart_total() / 100);
+    Print "</td></tr>"; 
     Print "</table>\n";
 }
 
@@ -79,7 +83,7 @@ if (!empty($this->items))
         $this->createForm("id=\"entry_box\"",
             array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 5),
             array('type' => 'text', 'name' => 'login_id', 'place' => 'Enter ID Number'),
-            array('type' => 'password', 'name' => 'login_pwd', 'place' => 'Enter ID Number'),
+            array('type' => 'password', 'name' => 'login_pwd', 'place' => 'Enter Password'),
             array('type' => 'submit', 'name' => 'submit', 'value' => 'confirm order')));
     }
 }

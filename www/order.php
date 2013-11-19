@@ -95,6 +95,25 @@ class Order
     }
 
     /** 
+     * Retrieves total cart cost.
+     */
+    public function print_cart_total()
+    {
+        if (empty($this->items))
+            return 0;
+        else
+        {
+            $price = 0;
+            foreach($this->items as $isbn => $dingo)
+            {
+                $price += $dingo['qty'] * $dingo['price'];
+            }
+            return $price;
+        }
+    }
+
+
+    /** 
      * Adds book to items array.
      * @param isbn - ISBN of the book to add to the cart.
      * @param title - The title of the book being added.
@@ -411,7 +430,6 @@ class Order
                 $_SESSION['store_name'] = $row['store_name'];
             }
 
-            echo "DONKEY SHIT ";
             /* free result set */
             mysqli_free_result($result);
         }
@@ -428,6 +446,5 @@ class Order
         $input = htmlspecialchars($input);
         return $input;
     }
-
 }
 ?>

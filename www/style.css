@@ -162,6 +162,7 @@ img
     right:-40px;
     top:-18px;
     margin-bottom:-30px;
+    margin-left:10px;
 }   
 
 #info
@@ -169,12 +170,17 @@ img
     position:fixed;
 }
 
+#order_total
+{
+    font: 1.4em Tahoma, sans-serif;
+    color:#8E0012;
+    font-weight:bold;
+    text-align:right;
+}
 
 #order_id 
 {
     font: 2.0em Tahoma, sans-serif;
-    font-color:red;
-
 }
 
 #entry_box
@@ -248,7 +254,6 @@ img
 
 .backl 
 {
-    -moz-user-select: text;
     background: none;
     border: none;
     color: grey;

@@ -36,12 +36,12 @@ if ($result = mysqli_query($this->con, $query))
 {
     $this->createForm("",
         array(array('type' => 'hidden', 'name' => 'author_action', 'value' => 2),
-        array('type' => 'submit', 'name' => 'submit', 'value' => $alphachar . " [x]", 'class' => 'backl')));   
+        array('type' => 'submit', 'name' => 'submit', 'value' => $_SESSION['alphachar'] . " [x]", 'class' => 'backl')));   
 
     while ($row = mysqli_fetch_assoc($result))
     {
         $this->createForm("",
-            array(array('type' => 'hidden', 'name' => 'alphachar', 'value' => $alphachar),
+            array(array('type' => 'hidden', 'name' => 'alphachar', 'value' => $_SESSION['alphachar']),
             array('type' => 'hidden', 'name' => 'family_name', 'value' => $row['family_name']),
             array('type' => 'hidden', 'name' => 'given_name', 'value' => $row['given_name']),
             array('type' => 'hidden', 'name' => 'author_action', 'value' => 4),

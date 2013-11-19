@@ -1,8 +1,7 @@
 <?php require("order.php"); ?>
 <?php session_start();?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML > 
+
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -46,16 +45,21 @@ if (isset($_POST['cart_action']))
     switch($_POST['cart_action'])
     {
     case 1:
+        if (isset($_POST['isbn']) && isset($_POST['title'])
+            && isset($_POST['price']) && isset($_POST['qty'])) 
         $cart->add_item($_POST['isbn'], $_POST['title'], $_POST['price'], $_POST['qty']); 
         break;
     case 2:
-        $cart->delete_item($_POST['isbn']);
+        if (isset($_POST['isbn']))
+            $cart->delete_item($_POST['isbn']);
         break;
     case 3:
-        $cart->increment($_POST['isbn']);
+        if (isset($_POST['isbn']))
+            $cart->increment($_POST['isbn']);
         break;
     case 4:
-        $cart->decrement($_POST['isbn']);
+        if (isset($_POST['isbn']))
+            $cart->decrement($_POST['isbn']);
         break;
     default:
         break;
@@ -71,10 +75,11 @@ if (isset($_POST['cart_action']))
 <?php 
 
 Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
-Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">";
-Print "<fieldset class=\"input\">";
-Print "<input type=\"hidden\" name=\"cart_view\" value=\"1\" />";
-Print "<input type=\"image\" src=\"images/shop_cart.png\" alt=\"Submit\">";
+
+Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">\n";
+Print "<fieldset class=\"input\">\n";
+Print "<input type=\"hidden\" name=\"cart_view\" value=\"1\" />\n";
+Print "<input type=\"image\" src=\"images/shop_cart.png\" alt=\"Submit\"/>\n";
 if (isset($_POST['cart_view']) && $_POST['cart_view'] == 2)
     ; // Do Nothing.    
 else
@@ -288,11 +293,20 @@ Videntur wisi dolore parum quinta in. Te in aliquip nihil dynamicus gothica. Nun
 
 <div id="footer">
 <p>Footer stuff.</p>
-</div>
+
+
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px" 
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+    </a>
+</p>
+
 
 </div>
 
-<div style="clear: both;"></div>
+</div>
 
 </div>
 

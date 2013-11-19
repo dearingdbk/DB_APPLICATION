@@ -154,7 +154,7 @@ if ($result = mysqli_query($this->con, $query))
         Print "<p class=\"price\">$" .$row['price'] / 100 . "</p>\n";
         $this->createForm("",
             array(array('type' => 'hidden', 'name' => 'cart_action', 'value' => 1),
-                  array('type' => 'hidden', 'name' => 'isbn', 'value' => $row['isbn']),
+                  array('type' => 'hidden', 'name' => 'isbn', 'value' => htmlspecialchars($row['isbn'])),
                   array('type' => 'hidden', 'name' => 'price', 'value' => $row['price']),
                   array('type' => 'hidden', 'name' => 'title', 'value' => $row['title']),
                   array('type' => 'hidden', 'name' => 'qty', 'value' => 1),
