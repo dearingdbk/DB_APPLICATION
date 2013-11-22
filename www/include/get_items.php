@@ -84,7 +84,7 @@ if (!empty($this->items))
             array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 5),
             array('type' => 'text', 'name' => 'login_id', 'place' => 'Enter ID Number'),
             array('type' => 'password', 'name' => 'login_pwd', 'place' => 'Enter Password'),
-            array('type' => 'submit', 'name' => 'submit', 'value' => 'confirm order')));
+            array('type' => 'submit', 'name' => 'submit', 'value' => 'login')));
     }
 }
 ?>

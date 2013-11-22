@@ -145,6 +145,8 @@ if ($result = mysqli_query($this->con, $query))
         Print "<h2> No books match your search.</h2>";
     while ($row = mysqli_fetch_assoc($result))
     {
+        if (!array_key_exists($row['isbn'], $this->items))
+        {
         Print "<div class=\"item_box\">\n";
         Print "<img src=\"" .$row['image_url'] . "\" alt=\"book_image\"/>\n";
         Print "<h2 class=\"title\">" . htmlspecialchars($row['title']) . "</h2>\n";
@@ -159,6 +161,7 @@ if ($result = mysqli_query($this->con, $query))
                   array('type' => 'submit', 'name' => 'add_to_cart', 'value' => 'Add to Cart')));
 
         Print "</div>\n";
+        }
     }
 }
 else

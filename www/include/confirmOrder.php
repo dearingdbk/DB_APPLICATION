@@ -1,6 +1,6 @@
 <?php
 
-$insert = "LOCK TABLES Bookorder WRITE; ";
+$insert = " LOCK TABLES Bookorder WRITE, Stocks WRITE, Contains WRITE; ";
 $insert .= "INSERT INTO Bookorder (order_date, id_number) ";
 $insert .= sprintf(" VALUES(\"%s\", \"%s\"); ", date("Y-m-d"), $_SESSION['login_id']);
 $insert .= "SELECT LAST_INSERT_ID();";
@@ -22,8 +22,7 @@ if (mysqli_multi_query($this->con, $insert))
         $rtn_val = true;
         foreach($this->items as $isbn => $dingo)
         {
-            $insert = "LOCK TABLES Stocks WRITE, Contains WRITE; ";
-            $insert .= "INSERT INTO Contains VALUES ";
+            $insert = "INSERT INTO Contains VALUES ";
             $insert .= sprintf(" ( \"%s\", \"%s\", 0, \"%s\"); ", $isbn, $order_id, $dingo['qty']);
             $insert .= sprintf("SELECT quantity FROM Stocks WHERE isbn = \"%s\" ", $isbn);
             $insert .= sprintf("AND store_id = \"%s\"; ", $_SESSION['store']);
@@ -70,6 +69,7 @@ else
 
 if ($rtn_val)
 {
+    
     mysqli_query($this->con, "UNLOCK TABLES");
     mysqli_commit($this->con);
     $_SESSION['confirmation'] = $order_id;
@@ -79,6 +79,7 @@ if ($rtn_val)
 else
 {
     mysqli_rollback($this->con);
+    mysqli_query($this->con, "ROLLBACK");
     mysqli_query($this->con, "UNLOCK TABLES");
 }
 

@@ -395,6 +395,9 @@ GRANT SELECT,INSERT,UPDATE,CREATE
     ON bookstore.*
     TO 'storeadmin'@'localhost' IDENTIFIED BY 'adminaccount';
 
+GRANT LOCK TABLES
+	ON bookstore.*
+	TO 'storeadmin'@'localhost';
     
 /* 
  * INSERT DATA INTO TABLES 
