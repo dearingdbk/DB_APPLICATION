@@ -30,15 +30,16 @@ else
         Print "<td>$" . $dingo['price'] / 100 . "</td>\n";
         Print "<td>" . $dingo['qty'];
 
-        $this->createForm("id=\"increase\"",
-            array(array('type' => 'hidden', 'name' => 'isbn', 'value' => $isbn),
-            array('type' => 'hidden', 'name' => 'cart_action', 'value' => 3),
-            array('type' => 'image', 'src' => 'images/increase.png', 'alt' => 'increase')));
-        
+
         $this->createForm("id=\"decrease\"",
             array(array('type' => 'hidden', 'name' => 'isbn', 'value' => $isbn),
             array('type' => 'hidden', 'name' => 'cart_action', 'value' => 4),
             array('type' => 'image', 'src' => 'images/decrease.png', 'alt' => 'decrease')));
+
+        $this->createForm("id=\"increase\"",
+            array(array('type' => 'hidden', 'name' => 'isbn', 'value' => $isbn),
+            array('type' => 'hidden', 'name' => 'cart_action', 'value' => 3),
+            array('type' => 'image', 'src' => 'images/increase.png', 'alt' => 'increase')));
 
         Print "</td>\n";
         Print "<td>";
@@ -69,14 +70,17 @@ if (!empty($this->items))
         array('type' => 'image', 'src' => 'images/trash.png', 'alt' => 'empty_cart')));
     if (isset($_SESSION['login_id']))
     {
+        $this->createForm("id=\"entry_box\" > <h2>" . $_SESSION['login_id'] . "</h2" ,
+            array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 7),
+            array('type' => 'submit', 'name' => 'submit', 'value' => 'confirm order')));
+
+
+
         $this->createForm("",
             array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 6),
             array('type' => 'image', 'src' => 'images/logout.png', 'alt' => 'logout')));
 
 
-        $this->createForm("id=\"entry_box\" > <h2>" . $_SESSION['login_id'] . "</h2" ,
-            array(array('type' => 'hidden', 'name' => 'cart_view', 'value' => 7), 
-            array('type' => 'submit', 'name' => 'submit', 'value' => 'confirm order')));
     }
     else
     {
