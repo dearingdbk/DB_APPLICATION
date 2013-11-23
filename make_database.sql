@@ -266,21 +266,22 @@ CREATE TABLE IF NOT EXISTS Phone
     PRIMARY KEY (phone_number, dept_code)
 );
 
-
+                    
+                    
 /*
  * Create a view to simplify access to data.
  * Displays the student ID, book ISBN, title, and Price.
  */
-CREATE VIEW order_view 
-    AS SELECT  
+CREATE VIEW order_view
+    AS SELECT
         a.*,
-        b.isbn, c.title, 
-        c.price 
-            FROM 
-            Bookorder a INNER JOIN Contains b 
-                ON a.order_id = b.order_id 
-            INNER JOIN 
-                Book c 
+        b.isbn, c.title,
+        c.price, b.received
+            FROM
+            Bookorder a INNER JOIN Contains b
+                ON a.order_id = b.order_id
+            INNER JOIN
+                Book c
                     ON b.isbn = c.isbn;
 
 
