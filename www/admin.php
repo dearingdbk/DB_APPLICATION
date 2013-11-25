@@ -139,8 +139,8 @@ if (isset($_SESSION['alogin']))
         echo "</FORM>";
         if (isset($_POST['isbn2']) && isset($_POST['qty2']))
         {
-            $inv->addBook($_POST['isbn2'], $_POST['title'], $_POST['year'], $_POST['price'], $_POST['image'], $_POST['qty2']);
-            echo "Added " . $_POST['title'] . "to the database";
+            $inv->addBook($_POST['isbn2'], $_POST['title'], 
+                $_POST['year'], $_POST['price'], $_POST['image'], $_POST['qty2']);
         }
         break;
     case 4:

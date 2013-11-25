@@ -19,8 +19,7 @@ if (preg_match("/1[0-9]{8}/i", $id_number))
     }
     else
     {
-        echo "The selected validate failed on execution.";
-        printf("<br/>Errormessage: %s\n", $this->con->error);
+        $rtn_val = false;
     }
 }
 else
