@@ -222,7 +222,8 @@ CREATE TABLE IF NOT EXISTS Requires
     course_number INTEGER NOT NULL,
     dept_code CHAR(4) NOT NULL,
     FOREIGN KEY (isbn) REFERENCES Book(isbn),
-    FOREIGN KEY (term_number, section_code, course_number, dept_code) REFERENCES Section(term_number, section_code, course_number, dept_code),
+    FOREIGN KEY (term_number, section_code, course_number, dept_code) 
+    REFERENCES Section(term_number, section_code, course_number, dept_code),
     PRIMARY KEY (isbn, term_number, section_code, course_number, dept_code)
 );
 

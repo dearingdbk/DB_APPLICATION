@@ -1,8 +1,9 @@
 <?php
 
-$insert = " LOCK TABLES Bookorder WRITE, Stocks WRITE, Contains WRITE; ";
-$insert .= "INSERT INTO Bookorder (order_date, id_number) ";
-$insert .= sprintf(" VALUES(\"%s\", \"%s\"); ", date("Y-m-d"), $_SESSION['login_id']);
+$insert = " LOCK TABLES Bookorder WRITE, Stocks WRITE, Contains WRITE;";
+$insert .= " INSERT INTO Bookorder (order_date, id_number) ";
+$insert .= sprintf(" VALUES(\"%s\", \"%s\"); ", date("Y-m-d"),
+	$_SESSION['login_id']);
 $insert .= "SELECT LAST_INSERT_ID();";
 
 if (mysqli_multi_query($this->con, $insert))
@@ -23,12 +24,17 @@ if (mysqli_multi_query($this->con, $insert))
         foreach($this->items as $isbn => $dingo)
         {
             $insert = "INSERT INTO Contains VALUES ";
-            $insert .= sprintf(" ( \"%s\", \"%s\", 0, \"%s\"); ", $isbn, $order_id, $dingo['qty']);
-            $insert .= sprintf("SELECT quantity FROM Stocks WHERE isbn = \"%s\" ", $isbn);
-            $insert .= sprintf("AND store_id = \"%s\"; ", $_SESSION['store']);
+            $insert .= sprintf(" ( \"%s\", \"%s\", 0, \"%s\"); ", 
+				$isbn, $order_id, $dingo['qty']);
+            $insert .= "SELECT quantity FROM Stocks WHERE ";
+            $insert .= sprintf("isbn = \"%s\" ", $isbn);
+            $insert .= sprintf("AND store_id = \"%s\"; ", 
+				$_SESSION['store']);
             $insert .= "UPDATE Stocks SET quantity = ";
-            $insert .= sprintf("quantity - \"%s\" WHERE isbn = \"%s\" ", $dingo['qty'], $isbn);
-            $insert .= sprintf("AND store_id = \"%s\" ; ", $_SESSION['store']);
+            $insert .= sprintf("quantity - \"%s\" WHERE isbn = \"%s\" ",
+				$dingo['qty'], $isbn);
+            $insert .= sprintf("AND store_id = \"%s\" ; ", 
+				$_SESSION['store']);
 
             if (mysqli_multi_query($this->con, $insert))
             {
@@ -41,8 +47,10 @@ if (mysqli_multi_query($this->con, $insert))
                         if ($row[0] - $dingo['qty'] <  0)
                         {
                             $rtn_val = false;
-                            printf("<h2> Not enough items in stock to fill order of %s.", $isbn);
-                            printf("<br/> requested: %s | stocked: %s </h2>", $dingo['qty'], $row[0]);
+                            Print "<h2> Not enough items in stock to ";
+							Print "fill order of " . $isbn . ".";
+                            Print "<br/> requested: " . $dingo['qty'];
+                            Print " | stocked: " . $row[0] . " </h2>";
                         }
                     }
 

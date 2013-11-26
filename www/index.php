@@ -2,16 +2,20 @@
 <?php session_start();?>
 <!DOCTYPE HTML > 
 
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php
 
+/* 
+ * Here is where we could change to a different store.
+ */
 if (!isset($_SESSION['store']))
     $_SESSION['store'] = 1;
 
-
+/* 
+ * Here we check if cart has been set if not we create a new order.
+ */
 if(!$cart && !isset($_SESSION['cart']))
 {
     $_SESSION['cart'] = new order();
@@ -66,16 +70,17 @@ if (isset($_POST['cart_action']))
 }
 
 ?>
-<div id="page-wrap">
-<div id="inside">
 
+<div id="page-wrap">	
+<div id="inside">
 <div id="header">
 
 <?php 
 
 Print "<h2 id=\"store\">" . $_SESSION['store_name'] . "</h2>";
 
-Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\" method=\"post\" class=\"cart\">\n";
+Print "<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]);
+Print "\" method=\"post\" class=\"cart\">\n";
 Print "<fieldset class=\"input\">\n";
 Print "<input type=\"hidden\" name=\"cart_view\" value=\"1\" />\n";
 Print "<input type=\"image\" src=\"images/shop_cart.png\" alt=\"Submit\"/>\n";
@@ -104,7 +109,12 @@ else
     $cart->print_IDForm();
 
 echo "</div><div id=\"department\">";
-
+/* 
+ *
+ *  Set Our Session Variables if they are new or changed.
+ * 
+ */
+ 
 if (isset($_POST['given_name']))
     $_SESSION['given_name'] = $cart->sanitize($_POST['given_name']);
 
@@ -135,7 +145,6 @@ if (isset($_POST['tmiddle']))
 if (isset($_POST['tend']))
     $_SESSION['tend'] = $_POST['tend'];
 
-
 if (isset($_POST['alphachar']))
     $_SESSION['alphachar'] = $_POST['alphachar'];
 
@@ -147,6 +156,9 @@ if (isset($_POST['filter_action']))
 elseif (!isset($_SESSION['filter_action']))
     $_SESSION['filter_action'] = 1;
 
+/* 
+ * Handle filters to the selection of Department or Courses.
+ */
 switch($_SESSION['filter_action'])
 {
 case 1:
@@ -169,13 +181,19 @@ if (isset($_POST['author_action']))
 elseif (!isset($_SESSION['author_action']))
     $_SESSION['author_action'] = 1;
 
+
+/* 
+ * Handle filters to the selection Authors.
+ */
 switch($_SESSION['author_action'])
 {
 case 1:
     $cart->list_alpha_choices("Authors", "start", "middle", "end", "author");
     break;
 case 2:
-    $cart->list_alpha_authors($_SESSION['start'], $_SESSION['middle'], $_SESSION['end']);
+    $cart->list_alpha_authors($_SESSION['start'],
+     $_SESSION['middle'],
+     $_SESSION['end']);
     break;
 case 3:
     $cart->list_authors($_SESSION['alphachar']);
@@ -186,13 +204,18 @@ case 4:
 default:
     break;
 }
+
 echo "</div><div id=\"title\">";
+
 
 if (isset($_POST['title_action']))
     $_SESSION['title_action'] = $_POST['title_action'];
 elseif (!isset($_SESSION['title_action']))
     $_SESSION['title_action'] = 1;
 
+/* 
+ * Handle filters to the selection of titles.
+ */
 switch($_SESSION['title_action'])
 {
 case 1:
@@ -208,6 +231,7 @@ default:
     break;
 }
 ?>
+
 </div>
 </div>
 
@@ -217,7 +241,10 @@ default:
 <?php
 
 if (isset($_POST['cart_view']))
-{    
+{   
+/* 
+ * Handle what to show for the cart.
+ */
     switch($_POST['cart_view'])
     {
     case 1:
@@ -249,28 +276,26 @@ if (isset($_POST['cart_view']))
     }
 }
 
+/* 
+ * If we are looking at the cart display the carts items.
+ * Else we display available books.
+ */
 if (isset($_SESSION['cart_view']))
 {
     $cart->get_items();
-
 }
 else
 {
     $cart->display_books();
 
 }
-
-
 ?>
 </div>
-
-
 <br /><br />
-
-
 <p>
-Although this information is prepared with care, Acadia Bookstore and imaginary arts Canada
-accept no responsibility for actions caused by misinformation.
+Although this information is prepared with care, Acadia Bookstore 
+and imaginary arts Canada accept no responsibility for actions 
+caused by misinformation.
 </p>
 </div>
 

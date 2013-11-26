@@ -5,7 +5,8 @@ $id_number = htmlspecialchars($id_number);
 
 if (preg_match("/1[0-9]{8}/i", $id_number))
 {
-    $query = sprintf("SELECT COUNT(id_number) FROM student_id WHERE id_number = %s ", $id_number);
+    $query = "SELECT COUNT(id_number) FROM student_id ";
+    $query .= sprintf("WHERE id_number = %s ", $id_number);
     $query = mysqli_real_escape_string($this->con, $query);
     if ($result = mysqli_query($this->con, $query))
     {

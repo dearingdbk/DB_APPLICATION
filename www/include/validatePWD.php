@@ -6,8 +6,9 @@ $login_id = trim($login_id);
 $login_id = stripslashes($login_id);
 $login_id = htmlspecialchars($login_id);
 
-$query = "SELECT COUNT(id_number) FROM student_id ";
-$query .= sprintf(" WHERE id_number = \"%s\" AND password_hash = PASSWORD(\"%s\") ", $login_id, $login_pwd);
+$query = "SELECT COUNT(id_number) FROM student_id WHERE ";
+$query .= sprintf("id_number = \"%s\" AND password_hash ", $login_id);
+$query .= sprintf("= PASSWORD(\"%s\") ", $login_pwd);
 
 if ($result = mysqli_query($this->con, $query))
 {

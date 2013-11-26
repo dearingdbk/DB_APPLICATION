@@ -24,7 +24,7 @@
 
 
     \item[Project Description] \hfill \\
-        Contained in this folder are the build scripts to create the \underline{new} database implementation of the project.
+        Contained in this folder are the build scripts to create the \underline{new} database implementation of the project and the web based application. 
 
     
     \item[Project Deliverables] \hfill 
@@ -32,12 +32,47 @@
             \item an install script which will run the commands needed to build the database - INSTALL.sh;
             \item a script of database commands to run which will create the database and load with data - make_database.sql;
             \item a folder containing data to be loaded into the database - load_files/*;
-            \item a folder containing the web based database application; and
-            \item a pdf file containing assumptions about the build of the project - assumptions.pdf;
+            \item a folder containing the web based application - www;
+            \item a pdf file containing assumptions about the build of the project - assumptions.pdf; and
+            \item an ER diagram in Dia format - bookstore.dia;
         \end{itemize}
         
     \item[To Build database] \hfill \\
 		\texttt{sh INSTALL.sh}
+	
+	\item[User accounts] \hfill \\
+		There are numerous student id's matching from 
+		\verb|100000000 to 100000297| 
+		
+		
+		\verb|100000195, 100000023, 100000123, 100000065, 100000066| are
+		some of the students enrolled in courses that require books.
+		
+		The password for all student accounts is \texttt{"passwd"}
+	
+	\item[Admin accounts] \hfill \\
+		There are 5 employee accounts: \hfill \\\\
+\begin{tabular}{|c|c|}
+  \hline
+  Employee ID & Password \\
+  \hline \hline
+  200056 & train \\
+  \hline
+  200057 & password \\
+  \hline
+  200058 & bread \\
+  \hline
+  200059 & monopoly \\
+  \hline
+  200060 & pizza \\
+  \hline
+\end{tabular}
+
+
+	\item[Database application] \hfill \\
+	There are two main pages to access the bookstore.  
+	index.php is the front end of the bookstore, and \hfill \\
+	admin.php is the backend administrator page.
 
 \end{description}
 

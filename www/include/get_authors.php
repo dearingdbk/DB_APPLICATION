@@ -7,7 +7,9 @@ if ($result = mysqli_query($this->con, $query))
 {
     while ($row = mysqli_fetch_assoc($result))
     {
-        $authors .= " " . $row['family_name'] . " " . $row['given_name'] ." | ";
+        $authors .= " " . $row['family_name'];
+        $authors .= " " . $row['given_name'];
+        $authors .= " | ";
     }
 }
 else

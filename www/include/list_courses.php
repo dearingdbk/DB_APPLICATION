@@ -6,7 +6,8 @@ $query .= "ORDER BY course_number";
 if ($result = mysqli_query($this->con, $query))
 {
     $this->createForm("",
-        array(array('type' => 'hidden', 'name' => 'filter_action', 'value' => 1),
+        array(array('type' => 'hidden', 'name' => 'filter_action',
+         'value' => 1),
         array('type' => 'submit', 'name' => 'submit', 
         'value' => $_SESSION['dept'] . " [x]", 'class' => 'backl')));
     
@@ -17,10 +18,14 @@ if ($result = mysqli_query($this->con, $query))
         $button .= $row['section_code'] . $row['term_number'] . "]";
 
         $this->createForm("",
-            array(array('type' => 'hidden', 'name' => 'dept', 'value' => $row['dept_code']),
-            array('type' => 'hidden', 'name' => 'course', 'value' => $row['course_number']),
-            array('type' => 'hidden', 'name' => 'filter_action', 'value' => 3),
-            array('type' => 'submit', 'name' => 'submit', 'value' => $button, 'class' => 'link')));
+            array(array('type' => 'hidden', 'name' => 'dept',
+             'value' => $row['dept_code']),
+            array('type' => 'hidden', 'name' => 'course',
+             'value' => $row['course_number']),
+            array('type' => 'hidden', 'name' => 'filter_action',
+             'value' => 3),
+            array('type' => 'submit', 'name' => 'submit',
+             'value' => $button, 'class' => 'link')));
     }   
 }
 

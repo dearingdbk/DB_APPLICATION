@@ -2,14 +2,14 @@
 
 /**
  * @date - 17 Nov 2013 
- * @name - COMP DB 
+ * @name - COMP DB Drost, Bethel, and Dearing
  * @params - NIL
  * @methods - 
  */
 class Order 
 {
-    private $items = array();
-    private $con;
+    private $items = array(); // items in the cart.
+    private $con;             // connection
     function __construct() 
     {
         $this->connectToDB("guest", "guestaccount");
@@ -129,13 +129,15 @@ class Order
         } 
         else if ($this->validISBN($isbn) && $qty > 0)
         {
-            $query = sprintf("SELECT title, price From Book WHERE isbn = \"%s\" ", $isbn);
+            $query = "SELECT title, price From Book WHERE ";
+            $query .= sprintf("isbn = \"%s\" ", $isbn);
             if ($result = mysqli_query($this->con, $query))
             {
 
                 $row = mysqli_fetch_assoc($result);
                 mysqli_free_result($result);
-                $this->items[$isbn] = array("qty" => $qty, "price" => $row['price'], "title" => $row['title']);
+                $this->items[$isbn] = array("qty" => $qty,
+					"price" => $row['price'], "title" => $row['title']);
             }
         }
 
@@ -157,7 +159,8 @@ class Order
      */
     public function decrement($isbn)
     {
-        if (array_key_exists($isbn, $this->items) && $this->items[$isbn]["qty"] > 1)
+        if (array_key_exists($isbn, $this->items)
+			&& $this->items[$isbn]["qty"] > 1)
             $this->items[$isbn]["qty"]--;
     }   
 
@@ -255,9 +258,12 @@ class Order
         Print "<h2>Courses</h2>\n";
 
         $this->createForm("",
-            array(array('type' => 'hidden', 'name' => 'filter_action', 'value' => 2),
-            array('type' => 'submit', 'name' => 'submit', 
-            'value' => $_SESSION['dept'] ." ".$_SESSION['course'] . " [x]", 'class' => 'backl')));
+            array(array('type' => 'hidden', 'name' => 'filter_action',
+             'value' => 2),
+            array('type' => 'submit', 
+            'name' => 'submit', 
+            'value' => $_SESSION['dept'] ." ".$_SESSION['course'] . " [x]",
+             'class' => 'backl')));
     }
 
     /**
@@ -269,9 +275,11 @@ class Order
         Print "<h2>Authors</h2>\n";
 
         $this->createForm("",
-            array(array('type' => 'hidden', 'name' => 'author_action', 'value' => 3),
+            array(array('type' => 'hidden', 'name' => 'author_action',
+             'value' => 3),
             array('type' => 'submit', 'name' => 'submit', 
-            'value' => $_SESSION['family_name'] . " " .$_SESSION['given_name'] . " [x]", 'class' => 'backauthor')));
+            'value' => $_SESSION['family_name'] . " " .$_SESSION['given_name'] . " [x]",
+             'class' => 'backauthor')));
 
     }
 
@@ -283,7 +291,8 @@ class Order
      * @param end - the last character in a set of 3.
      * @param action - the action name to post, either author ot title.
      */ 
-    public function list_alpha_choices($title, $start, $middle, $end, $action)
+    public function list_alpha_choices($title, $start, $middle,
+		$end, $action)
     {
         include 'include/list_alpha_choices.php';   
     }
@@ -305,13 +314,16 @@ class Order
         Print "<h2>Titles</h2>";
 
         $this->createForm("",
-            array(array('type' => 'hidden', 'name' => 'title_action', 'value' => 2),
+            array(array('type' => 'hidden', 'name' => 'title_action',
+             'value' => 2),
             array('type' => 'submit', 'name' => 'submit', 
-            'value' => $_SESSION['talphachar'] . " [x]", 'class' => 'backl')));
+            'value' => $_SESSION['talphachar'] . " [x]",
+             'class' => 'backl')));
     }
 
     /** 
-     * Lists the Letters available for choice corresponding to available authors.
+     * Lists the Letters available for choice corresponding to 
+     * available authors.
      * @uses createForm - 
      */   
     public function list_alpha_authors()
@@ -338,17 +350,21 @@ class Order
         $this_filter = "";
         switch($case)
         {
-        case 2:
-            $this_filter = sprintf(" REGEXP \"^[%s-%s]\" ", $_SESSION['start'], $_SESSION['end']);
+          case 2:
+            $this_filter = sprintf(" REGEXP \"^[%s-%s]\" ", 
+				$_SESSION['start'], $_SESSION['end']);
             break;
-        case 3:
-            $this_filter = sprintf(" LIKE \"%s%%\" ",  $_SESSION['alphachar']);
+          case 3:
+            $this_filter = sprintf(" LIKE \"%s%%\" ",  
+				$_SESSION['alphachar']);
             break;
-        case 4:
-            $this_filter = sprintf(" =  \"%s\" ", $_SESSION['family_name']);
-            $this_filter .= sprintf(" AND given_name = \"%s\" ",$_SESSION['given_name']);
+          case 4:
+            $this_filter = sprintf(" =  \"%s\" ", 
+				$_SESSION['family_name']);
+            $this_filter .= sprintf(" AND given_name = \"%s\" ",
+				$_SESSION['given_name']);
             break;
-        default:
+          default:
             break;
         }
         return $this_filter;
@@ -379,11 +395,13 @@ class Order
     /** 
      * Prints all authors associated with a particular book. 
      * @param form_data- any extra input required in the form.
-     * @param input_items The multidimensional array containing input fields.
+     * @param input_items The multidimensional array containing 
+     * input fields.
      */   
     public function createForm($form_data, $input_items) 
     {
-        Print "\n<form action=\"" . htmlspecialchars($_SERVER["PHP_SELF"]) . "\"";
+        Print "\n<form action=\"";
+        Print htmlspecialchars($_SERVER["PHP_SELF"]) . "\"";
         Print " method=\"post\" " . $form_data . ">\n";
         Print "<fieldset class=\"input\">\n";
         foreach($input_items as $item => $dingo)
@@ -427,7 +445,8 @@ class Order
     {
 
 
-        $query = sprintf("SELECT * FROM Bookstore WHERE store_id = %s", $_SESSION['store']);
+        $query = sprintf("SELECT * FROM Bookstore WHERE store_id = %s",
+			$_SESSION['store']);
         if ($result = mysqli_query($this->con, $query))
         {
 
@@ -468,7 +487,8 @@ class Order
         {
             if ($this->is_isbn_valid(str_replace('-', '', $isbn)))
             {
-                $query = sprintf("SELECT COUNT(isbn) From Book WHERE isbn = \"%s\" ", $isbn);
+                $query = "SELECT COUNT(isbn) From Book WHERE ";
+                $query .= sprintf("isbn = \"%s\" ", $isbn);
                 if ($result = mysqli_query($this->con, $query))
                 {
                     /* fetch associative array */
@@ -480,19 +500,24 @@ class Order
             }
         }
         return false;
-
     }
 
 
     /*
-     * @ WIKI CODE
-     *
+     * Checks an ISBN to be valid according to the calculations required 
+     * simply every odd number is added to 3 * every even number.
+     * Once added together divide by 10. 10 - the remainder == the check
+     * digit. but if you add in the check digit to the mix total mod 10 
+     * should equal zero. 
+     * Code Borrowed from WIKI article about ISBN 13.
      */  
-    private function is_isbn_valid($n)
+    private function is_isbn_valid($isbn)
     {
         $check = 0;
-        for ($i = 0; $i < 13; $i+=2) $check += substr($n, $i, 1);
-        for ($i = 1; $i < 12; $i+=2) $check += 3 * substr($n, $i, 1);
+        for ($i = 0; $i < 13; $i+=2) 
+			$check += substr($isbn, $i, 1);
+        for ($i = 1; $i < 12; $i+=2) 
+			$check += 3 * substr($isbn, $i, 1);
         return $check % 10 == 0;
     }
 }
