@@ -1,3 +1,9 @@
+/*
+ * Start Transaction: This way, if any part of the script encounters an error, 
+ * the entire set of changes will be rolled back, and your database will remain in a consistent state.
+*/
+START TRANSACTION;
+
 /* 
  * Drop the database if it already exists
  * this will give us a fresh start 
@@ -12,7 +18,7 @@ CREATE DATABASE IF NOT EXISTS bookstore;
 /*
  * Use newly created bookstore.
  */
-use bookstore
+USE bookstore
 
 /*
  * Create table Department.
@@ -595,3 +601,4 @@ OPTIONALLY ENCLOSED BY '"'
 ESCAPED BY '"'
 LINES TERMINATED BY '\n';
 
+COMMIT;
